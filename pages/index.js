@@ -8,7 +8,9 @@ export default function Page({isMobile}) {
     return (
       <StyledMain>
             <StyledSplineBackgroundWrapper>
-          <Spline scene="https://prod.spline.design/gSfN3MXvPkAzNfml/scene.splinecode" />
+        {/*  <Spline scene="https://prod.spline.design/gSfN3MXvPkAzNfml/scene.splinecode" />*/}
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.17/build/spline-viewer.js" async/>
+<spline-viewer url="https://prod.spline.design/gSfN3MXvPkAzNfml/scene.splinecode"></spline-viewer>
 
         </StyledSplineBackgroundWrapper>
         <StyledMainSection>
