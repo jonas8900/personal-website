@@ -1,20 +1,19 @@
 
 import styled from 'styled-components';
 import Spline from '@splinetool/react-spline';
+import NavigationBar from '@/components/Navbar/navigationBar';
 
-export default function Page() {
+export default function Page({isMobile}) {
+
     return (
       <StyledMain>
             <StyledSplineBackgroundWrapper>
-           <Spline scene="https://draft.spline.design/i7ihPiUk1Gy04GwN/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/gSfN3MXvPkAzNfml/scene.splinecode" />
+
         </StyledSplineBackgroundWrapper>
         <StyledMainSection>
-        <h1>Next.js + Spline</h1>
-        <p>
-          This is an example of using Spline with Next.js. The Spline scene is
-          rendered on the <code>index</code> page.
-        </p>
-       
+            <NavigationBar isMobile={isMobile}/>
+      
         </StyledMainSection> 
         <StyledDivForSplineMobilePhone>
         <Spline scene="https://draft.spline.design/5viGrrJfn78PDoLV/scene.splinecode" />
@@ -27,7 +26,6 @@ export default function Page() {
   }
   
   const StyledMain = styled.main`
-
 
 `;
 
@@ -55,9 +53,16 @@ box-shadow: 0 0 10px rgba(0,0,0,0.5);
 
 const StyledDivForSplineMobilePhone = styled.div`
   position: absolute;
-  width: 20%;
+  width: 100%;
   height: 100%;
   top: 230%;
   left: 10px;
-
+  scale: 0.5;
+@media (min-width: 1024px) {
+  scale: 0.8;
+  width: 40%;
+}
+@media (max-height: 500px ) {
+  display: none;
+}
 `;
