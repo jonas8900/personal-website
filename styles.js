@@ -1,7 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { Roboto_Flex } from "next/font/google";
 
-const roboto = Roboto_Flex({ subsets: ["latin"], weight: "400" });
 
 
 export default createGlobalStyle`
@@ -20,8 +18,8 @@ export default createGlobalStyle`
     body {
       margin: 0;
     padding: 0;
-    font-family: "Lato";
-    font-weight: 600;
+    font-family: 'lato', sans-serif;
+    font-weight: 400;
     }
 
     :root {

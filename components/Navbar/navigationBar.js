@@ -66,7 +66,7 @@ align-items: center;
 right: 5%;
 border-radius: 9px;
 padding: 0.5rem;
-	margin: 0;
+margin: 0;
 background: #FFF;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
