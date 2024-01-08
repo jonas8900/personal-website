@@ -52,7 +52,7 @@ const StyledDescriptionCard = styled.article`
     width: 50rem;
     height: 35rem;
   }
-  @media (max-width: var(--large-mobile-breakpoint)) {
+  @media (max-width: 915px) {
     width: 70%;
     min-width: 22rem;
     height: 100%;
