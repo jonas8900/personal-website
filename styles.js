@@ -33,7 +33,7 @@ export default createGlobalStyle`
       --skillset-icon-height: 3rem;
       --skillset-icon-mobile-width: 2rem;
       --skillset-icon-mobile-height: 2rem;
-      --large-mobile-breakpoint: var(--large-mobile-breakpoint);
+      --large-mobile-breakpoint: 915px;
       --small-mobile-breakpoint: 768px;
       --large-desktop-breakpoint: 1921px;
 
