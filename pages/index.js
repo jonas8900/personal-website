@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
+import LandingPageDescriptionCard from '@/components/DescriptionCards/LandingPageDescriptionCard';
 
 export default function Page({isMobile}) {
   //const [isloading, setLoading] = useState(false); // this needs to be fixed at the end of the project to be able to use the spline background
@@ -13,7 +14,7 @@ export default function Page({isMobile}) {
 
     return (
       <StyledMain>
-        <StyledBackgroundImage src="/images/Backgroundimage.png" alt="3d Backgroundpicture with white and blue colored artefact" width={1920} height={1080} unoptimized/>
+        {/* <StyledBackgroundImage src="/images/Backgroundimage.png" alt="3d Backgroundpicture with white and blue colored artefact" width={1920} height={1080} unoptimized/> */}
         {/* this needs to be fixed at the end of the project to be able to use the spline background */}
       {/* {isloading ? (
         <StyledLoadingIcon icon={faCircleNotch} spin />
@@ -24,15 +25,10 @@ export default function Page({isMobile}) {
 
       <Spline onLoad={() => setLoading(false)} scene="https://draft.spline.design/BuZzbLISnCnN8Cev/scene.splinecode" /> 
         </StyledSplineBackgroundWrapper> */}
-        <StyledMainSection>
+        <StyledLandingPageWrapper>
             <NavigationBar isMobile={isMobile}/>
-      
-        </StyledMainSection> 
-        <StyledDivForSplineMobilePhone>
-        <Spline scene="https://draft.spline.design/5viGrrJfn78PDoLV/scene.splinecode" />
-        </StyledDivForSplineMobilePhone>
-
-  
+            <LandingPageDescriptionCard />
+        </StyledLandingPageWrapper>   
       </StyledMain>
     );
 
@@ -45,13 +41,16 @@ export default function Page({isMobile}) {
   const StyledMain = styled.main`
 width: 100%;
 height: 100%;
+background-image: url("/images/Backgroundimage.png");
 `;
 
 
-const StyledMainSection = styled.section`
-position: relative; 
-margin: auto; 
-padding: 2rem;
+const StyledLandingPageWrapper = styled.section`
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 0.5fr 1fr 0.5fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px; 
 width: 100%;
 height: 100vh;
 border-bottom: 1px solid black;
@@ -60,7 +59,8 @@ box-shadow: 0 0 10px rgba(0,0,0,0.5);
 `;
 
 const StyledBackgroundImage = styled(Image)` // temporary solution for the background image to match the design
-position: fixed;
+width: 100%;
+height: 100%;
 `;
 
 //wrapper for spline background
@@ -72,21 +72,6 @@ position: fixed;
 `;
 
 
-const StyledDivForSplineMobilePhone = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 230%;
-  left: 10px;
-  scale: 0.5;
-@media (min-width: 1024px) {
-  scale: 0.8;
-  width: 40%;
-}
-@media (max-height: 500px ) {
-  display: none;
-}
-`;
 
 
 //icons

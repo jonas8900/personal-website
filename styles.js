@@ -1,7 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
-
 export default createGlobalStyle`
  *,
   *::before,
@@ -26,6 +24,18 @@ export default createGlobalStyle`
       --primary-blue: #54658D;
       --secondary-yellow: #FFCE7C;
       --tertiary: #9FD0EC;
-      --description-card-color: #7393B2
+      --description-card-color: #7393B2;
+      --font-size-headline: 22px; 
+      --font-size-subheadline: 18px;
+      --font-size-greater-text: 17px;
+      --font-size-text: 16px;
+      --skillset-icon-width: 3rem;
+      --skillset-icon-height: 3rem;
+      --skillset-icon-mobile-width: 2rem;
+      --skillset-icon-mobile-height: 2rem;
+      --large-mobile-breakpoint: var(--large-mobile-breakpoint);
+      --small-mobile-breakpoint: 768px;
+      --large-desktop-breakpoint: 1921px;
+
     }
 `;
