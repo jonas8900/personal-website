@@ -52,12 +52,14 @@ const StyledDescriptionCard = styled.article`
     width: 50rem;
     height: 35rem;
   }
+  @media (max-width: 1299px) {
+    grid-area: 2 / 1 / 3 / 3;
+  }
   @media (max-width: 915px) {
     width: 70%;
     min-width: 22rem;
     height: 100%;
     min-height: 30rem;
-    grid-area: 2 / 1 / 3 / 3;
     align-self: flex-start;
   }
 `;

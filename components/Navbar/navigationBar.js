@@ -29,7 +29,7 @@ export default function NavigationBar({ isMobile }) {
               toggle={setMenuOpen}
             />
           </StyledMobileMenuIconWrapper>
-          <StyledMobileUl isMenuOpen={isMenuOpen}>
+          <StyledMobileUl ismenuopen={isMenuOpen ? isMenuOpen : undefined}>
             <StyledLiNames>Projekte</StyledLiNames>
             <StyledLiNames>Über mich</StyledLiNames>
             <StyledLiNames>Kontakt</StyledLiNames>
@@ -101,7 +101,7 @@ const StyledMobileUl = styled.ul`
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.9);
-  opacity: ${({ isMenuOpen }) => (isMenuOpen ? 1 : 0)};
+  opacity: ${({ ismenuopen }) => (ismenuopen ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
 `;
 

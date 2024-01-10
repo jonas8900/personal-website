@@ -14,9 +14,9 @@ export default createGlobalStyle`
   }
 
     body {
-      margin: 0;
+    margin: 0;
     padding: 0;
-    font-family: 'lato', sans-serif;
+    font-family: "inter", sans-serif;
     font-weight: 400;
     }
 
@@ -36,6 +36,5 @@ export default createGlobalStyle`
       --large-mobile-breakpoint: 915px;
       --small-mobile-breakpoint: 768px;
       --large-desktop-breakpoint: 1921px;
-
     }
 `;
