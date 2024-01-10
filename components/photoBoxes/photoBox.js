@@ -117,7 +117,7 @@ const StyledFirstPhotoArticle = styled(Photos)`
         return "2";
     }
   }};
-  @media (max-width: 1299px) {
+  @media (max-width: 1024px) {
     animation: none;
     rotate: 0deg;
     right: 50%;
@@ -149,7 +149,7 @@ const StyledSecondPhotoArticle = styled(Photos)`
           ${SortedAnimation} 0.5s ease
         `
       : ""};
-  @media (max-width: 1299px) {
+  @media (max-width: 1024px) {
     animation: none;
     rotate: 0deg;
     right: 40%;
@@ -181,7 +181,7 @@ const StyledThirdPhotoArticle = styled(Photos)`
           ${SortedAnimation} 0.5s ease
         `
       : ""};
-  @media (max-width: 1299px) {
+  @media (max-width: 1024px) {
     animation: none;
     rotate: 0deg;
     right: 30%;
@@ -210,13 +210,15 @@ const StyledPhotoboxWrapper = styled.section`
   grid-area: 2 / 1 / 2 / 2;
   width: 50%;
   justify-self: center;
+
   display: flex;
   position: relative;
   cursor: pointer;
-  @media (max-width: 1299px) {
+  @media (max-width: 1024px) {
     grid-area: 3 / 1 / 4 / 3;
-    margin-top: 10rem;
-    border: 1px solid black;
+  }
+  @media (max-width: 915px) {
+    margin-top: 5rem;
   }
   //create switch case for the different positions of the photos in the photobox with 3 different positions
   &:hover ${StyledFirstPhotoArticle} {
@@ -332,7 +334,7 @@ const StyledPhotoboxWrapper = styled.section`
       $counterforphotopositioning === 2 ? "1" : "0"};
   }
 
-  @media (max-width: 1299px) {
+  @media (max-width: 1024px) {
     &:active ${StyledFirstPhotoArticle} {
       rotate: 0deg;
       right: ${({ $counterforphotopositioning }) => {

@@ -11,6 +11,7 @@ export default createGlobalStyle`
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+
   }
 
     body {
@@ -18,6 +19,7 @@ export default createGlobalStyle`
     padding: 0;
     font-family: "inter", sans-serif;
     font-weight: 400;
+
     }
 
     :root {

@@ -35,8 +35,14 @@ export default function Page({ isMobile }) {
 
 const StyledMain = styled.main`
   width: 100%;
-  height: 100%;
-  background-image: url("/images/Backgroundimage.png");
+  background: rgb(226, 226, 226);
+  background: linear-gradient(
+    180deg,
+    rgba(226, 226, 226, 1) 16%,
+    rgba(219, 229, 244, 1) 46%,
+    rgba(198, 226, 252, 1) 73%
+  );
+  min-height: 300vh;
 `;
 
 const StyledLandingPageWrapper = styled.section`
@@ -44,19 +50,18 @@ const StyledLandingPageWrapper = styled.section`
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 0.5fr 1fr 0.5fr;
   grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  width: 100%;
-  height: 100%;
-  border-bottom: 1px solid black;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
+  grid-row-gap: 1rem;
+  justify-items: center;
+  min-height: 100vh;
+  width: 80%;
+  margin: auto;
   @media (max-width: 1299px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 0.1fr 1fr 0.5fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    width: 100%;
   }
 `;
 

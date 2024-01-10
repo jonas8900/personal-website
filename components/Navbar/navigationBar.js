@@ -63,8 +63,11 @@ export default function NavigationBar({ isMobile }) {
 const StyledNavigationWrapper = styled.nav`
   padding: 2rem;
   grid-area: 1 / 2 / 2 / 3;
-  @media (max-width: var(--large-mobile-breakpoint)) {
-    grid-area: 1 / 1 / 2 / 3;
+  @media (max-width: 915px) {
+    justify-self: flex-end;
+    align-self: flex-start;
+    padding: 0;
+    margin: 1rem 0 0 0
   }
 `;
 
