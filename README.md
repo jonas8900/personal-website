@@ -1,9 +1,11 @@
 # Personal Website - Jonas Dally
 
-![GitHub repo size](https://img.shields.io/github/repo-size/jonas8900/personal-website)
-![GitHub contributors](https://img.shields.io/github/contributors/jonas8900/personal-website)
-![GitHub stars](https://img.shields.io/github/stars/jonas8900/personal-website?style=social)
-![GitHub forks](https://img.shields.io/github/forks/jonas8900/personal-website?style=social)
+[![GitHub repo size](https://img.shields.io/github/repo-size/jonas8900/personal-website)](https://github.com/jonas8900/personal-website)
+[![GitHub contributors](https://img.shields.io/github/contributors/jonas8900/personal-website)](https://github.com/jonas8900/personal-website/graphs/contributors)
+[![GitHub stars](https://img.shields.io/github/stars/jonas8900/personal-website?style=social)](https://github.com/jonas8900/personal-website/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/jonas8900/personal-website?style=social)](https://github.com/jonas8900/personal-website/network/members)
+
+
 
 Welcome to the repository of my personal website! This project showcases my skills, projects, and experiences as a web developer. Feel free to explore and learn more about me and my work.
 
@@ -47,6 +49,9 @@ Feel free to use this project as a template for your own personal website. Modif
 - [Next.js](https://nextjs.org/) - React framework for building web applications.
 - [Styled Components](https://styled-components.com/) - CSS-in-JS library for styling React components.
 - [Nodemailer](https://nodemailer.com/) - Module for Node.js to send emails.
+- [Framer Motion](https://www.framer.com/motion/) - A library for creating smooth animations in React.
+- **HTML** - The standard markup language for creating web pages.
+- **CSS** - Cascading Style Sheets for styling web pages.
 
 ## Contributing
 
