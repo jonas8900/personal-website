@@ -21,7 +21,10 @@ export default function PhotoBox() {
   function handleHovering() {
     setIsHoveringOverPhotobox(true);
   }
-  console.log(isHoveringOverPhotobox);
+
+  function handleTouchOnMobile() {
+    setIsHoveringOverPhotobox(!isHoveringOverPhotobox);
+  }
 
   return (
     <>
@@ -29,8 +32,8 @@ export default function PhotoBox() {
         onClick={handleCounterForPhotoPositioning}
         onMouseEnter={handleHovering}
         onMouseLeave={() => setIsHoveringOverPhotobox(false)}
-        onTouchStart={handleHovering}
-        onTouchEnd={() => setIsHoveringOverPhotobox(false)}
+        onTouchStart={handleTouchOnMobile}
+        onTouchEnd={handleTouchOnMobile}
         $counterforphotopositioning={counterForPhotoPositioning}>
         <StyledFirstPhotoArticle //first Photo in the Photobox
           $counterforphotopositioning={counterForPhotoPositioning}
@@ -118,6 +121,7 @@ const StyledFirstPhotoArticle = styled(Photos)`
     }
   }};
   @media (max-width: 1024px) {
+    outline: none;
     animation: none;
     rotate: 0deg;
     right: 50%;
@@ -150,6 +154,7 @@ const StyledSecondPhotoArticle = styled(Photos)`
         `
       : ""};
   @media (max-width: 1024px) {
+    outline: none;
     animation: none;
     rotate: 0deg;
     right: 40%;
@@ -182,6 +187,7 @@ const StyledThirdPhotoArticle = styled(Photos)`
         `
       : ""};
   @media (max-width: 1024px) {
+    outline: none;
     animation: none;
     rotate: 0deg;
     right: 30%;
@@ -210,7 +216,7 @@ const StyledPhotoboxWrapper = styled.section`
   grid-area: 2 / 1 / 2 / 2;
   width: 50%;
   justify-self: center;
-
+  outline: none;
   display: flex;
   position: relative;
   cursor: pointer;
