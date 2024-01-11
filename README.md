@@ -1,9 +1,9 @@
 # Personal Website - Jonas Dally
 
-![GitHub repo size](https://img.shields.io/github/repo-size/your-username/your-personal-website)
-![GitHub contributors](https://img.shields.io/github/contributors/your-username/your-personal-website)
-![GitHub stars](https://img.shields.io/github/stars/your-username/your-personal-website?style=social)
-![GitHub forks](https://img.shields.io/github/forks/your-username/your-personal-website?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/jonas8900/personal-website)
+![GitHub contributors](https://img.shields.io/github/contributors/jonas8900/personal-website)
+![GitHub stars](https://img.shields.io/github/stars/jonas8900/personal-website?style=social)
+![GitHub forks](https://img.shields.io/github/forks/jonas8900/personal-website?style=social)
 
 Welcome to the repository of my personal website! This project showcases my skills, projects, and experiences as a web developer. Feel free to explore and learn more about me and my work.
 
