@@ -22,9 +22,13 @@ export default function PhotoBox() {
     setIsHoveringOverPhotobox(true);
   }
 
-  function handleTouchOnMobile() {
-    setIsHoveringOverPhotobox(!isHoveringOverPhotobox);
-  }
+  function handleTouchStartOnMobile() {
+    setIsHoveringOverPhotobox(true);
+  } 
+
+  function handleCancelTouchOnMobile() {
+    setIsHoveringOverPhotobox(false);
+  } 
 
   return (
     <>
@@ -32,8 +36,8 @@ export default function PhotoBox() {
         onClick={handleCounterForPhotoPositioning}
         onMouseEnter={handleHovering}
         onMouseLeave={() => setIsHoveringOverPhotobox(false)}
-        onTouchStart={handleTouchOnMobile}
-        onTouchCancel={handleTouchOnMobile}
+        onTouchStart={handleTouchStartOnMobile}
+        onTouchCancel={handleCancelTouchOnMobile}
         $counterforphotopositioning={counterForPhotoPositioning}>
         <StyledFirstPhotoArticle //first Photo in the Photobox
           $counterforphotopositioning={counterForPhotoPositioning}
