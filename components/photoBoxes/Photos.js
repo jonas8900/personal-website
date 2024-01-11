@@ -11,6 +11,7 @@ export default function Photos({ alt, className, src }) {
         alt={alt}
         src={src}
         sizes="(max-width: 768px) 300px, (max-width: 1024px) 400px, (max-width: 1400px) 1080px" //for increase performance
+        loading="lazy"
       />
     </StyledPhoto>
   );
