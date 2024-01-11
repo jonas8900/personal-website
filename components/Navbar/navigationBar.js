@@ -29,7 +29,7 @@ export default function NavigationBar({ isMobile }) {
               toggle={setMenuOpen}
             />
           </StyledMobileMenuIconWrapper>
-          <StyledMobileUl isMenuOpen={isMenuOpen}>
+          <StyledMobileUl ismenuopen={isMenuOpen ? isMenuOpen : undefined}>
             <StyledLiNames>Projekte</StyledLiNames>
             <StyledLiNames>Über mich</StyledLiNames>
             <StyledLiNames>Kontakt</StyledLiNames>
@@ -63,8 +63,11 @@ export default function NavigationBar({ isMobile }) {
 const StyledNavigationWrapper = styled.nav`
   padding: 2rem;
   grid-area: 1 / 2 / 2 / 3;
-  @media (max-width: var(--large-mobile-breakpoint)) {
-    grid-area: 1 / 1 / 2 / 3;
+  @media (max-width: 915px) {
+    justify-self: flex-end;
+    align-self: flex-start;
+    padding: 0;
+    margin: 1rem 0 0 0
   }
 `;
 
@@ -101,7 +104,7 @@ const StyledMobileUl = styled.ul`
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.9);
-  opacity: ${({ isMenuOpen }) => (isMenuOpen ? 1 : 0)};
+  opacity: ${({ ismenuopen }) => (ismenuopen ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
 `;
 

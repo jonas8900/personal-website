@@ -39,7 +39,6 @@ const StyledDescriptionCard = styled.article`
   grid-row-gap: 0px;
   grid-area: 2 / 2 / 3 / 3;
   justify-self: center;
-  align-self: center;
   width: 45rem;
   height: 30rem;
   border-radius: 9px;
@@ -52,13 +51,20 @@ const StyledDescriptionCard = styled.article`
     width: 50rem;
     height: 35rem;
   }
-  @media (max-width: 915px) {
-    width: 70%;
+  @media (max-width: 1500px) {
+    width: 90%;
+    align-self: center;
+    margin: auto auto auto 4rem;
+  }
+  @media (max-width: 1024px) {
+    width: 80%;
     min-width: 22rem;
-    height: 100%;
+    height: 80%;
     min-height: 30rem;
+    margin: auto auto auto;
     grid-area: 2 / 1 / 3 / 3;
-    align-self: flex-start;
+    grid-template-columns: 1.5fr 0.7fr;
+  grid-template-rows: 0.6fr repeat(2, 1fr);
   }
 `;
 
