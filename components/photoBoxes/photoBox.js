@@ -23,12 +23,11 @@ export default function PhotoBox() {
   }
 
   function handleTouchOnMobile() {
-    setCounterForPhotoPositioning(true);
+    setCounterForPhotoPositioning(false);
   }
 
-  function handleTouchEndOnMobile(event) {
-    event.preventDefault();
-    setIsHoveringOverPhotobox(false);
+  function handleTouchEndOnMobile() {
+    setIsHoveringOverPhotobox(true);
   }
 
   return (
