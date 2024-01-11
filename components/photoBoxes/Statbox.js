@@ -10,6 +10,7 @@ export default function StatBox({
   shouldAnimate,
   shouldBeVisible,
 }) {
+  //Statbox and Statbox animations for the photobox
   const container = {
     hidden: { scale: 0 },
     visible: {

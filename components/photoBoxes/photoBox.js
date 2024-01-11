@@ -5,30 +5,30 @@ import Age from "../Calculates/BirthDayCalculations";
 import StatBox from "./Statbox";
 
 export default function PhotoBox() {
+  //for the Statbox
   const birthDayJonasDally = "1996-08-13";
   const birthDayMaliBalu = "2021-12-23";
+  const [isHoveringOverPhotobox, setIsHoveringOverPhotobox] = useState(false);
+  //function to handle hovering over the photobox to get the animation for the photos and the statboxes
+  function handleHovering() {
+    setIsHoveringOverPhotobox(true);
+  }
+  function handleTouchStartOnMobile() {
+    setIsHoveringOverPhotobox(true);
+  }
+  function handleCancelTouchOnMobile() {
+    setIsHoveringOverPhotobox(false);
+  }
+
+  //for the pictures and picture animations
   const [counterForPhotoPositioning, setCounterForPhotoPositioning] =
     useState(0);
-  const [isHoveringOverPhotobox, setIsHoveringOverPhotobox] = useState(false);
-
+  //function to change the position of the photos in the photobox with 3 different positions
   function handleCounterForPhotoPositioning() {
-    //function to change the position of the photos in the photobox with 3 different positions
     if (counterForPhotoPositioning < 2) {
       setCounterForPhotoPositioning(counterForPhotoPositioning + 1);
     } else setCounterForPhotoPositioning(0);
   }
-
-  function handleHovering() {
-    setIsHoveringOverPhotobox(true);
-  }
-
-  function handleTouchStartOnMobile() {
-    setIsHoveringOverPhotobox(true);
-  } 
-
-  function handleCancelTouchOnMobile() {
-    setIsHoveringOverPhotobox(false);
-  } 
 
   return (
     <>
@@ -206,7 +206,7 @@ const StyledParentForStatbox = styled.div`
   transform: translate(50%);
 `;
 
-//Statboxes for the photos
+//Statboxes for each photo to show the information about 
 const StyledFirstStatbox = styled(StatBox)``;
 const StyledSecondStatbox = styled(StatBox)``;
 const StyledThirdStatbox = styled(StatBox)``;
@@ -339,7 +339,7 @@ const StyledPhotoboxWrapper = styled.section`
     opacity: ${({ $counterforphotopositioning }) =>
       $counterforphotopositioning === 2 ? "1" : "0"};
   }
-
+//create switch case for the different positions of the photos in the photobox with 3 different positions for mobile devices
   @media (max-width: 1024px) {
     &:active ${StyledFirstPhotoArticle} {
       rotate: 0deg;

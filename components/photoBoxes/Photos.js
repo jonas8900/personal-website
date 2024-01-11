@@ -5,7 +5,14 @@ export default function Photos({ alt, className, src }) {
   //photo for photobox in about me section
   return (
     <StyledPhoto className={className}>
-      <StyledImage width={1920} height={1080} unoptimized alt={alt} src={src} />
+      <StyledImage
+        width={1920}
+        height={1080}
+        alt={alt}
+        src={src}
+        sizes="(max-width: 768px) 300px, (max-width: 1024px) 400px, (max-width: 1400px) 1080px" //for increase performance
+        loading="lazy"
+      />
     </StyledPhoto>
   );
 }
