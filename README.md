@@ -2,8 +2,9 @@
 
 [![GitHub repo size](https://img.shields.io/github/repo-size/jonas8900/personal-website)](https://github.com/jonas8900/personal-website)
 [![GitHub contributors](https://img.shields.io/github/contributors/jonas8900/personal-website)](https://github.com/jonas8900/personal-website/graphs/contributors)
-[![GitHub stars](https://img.shields.io/github/stars/jonas8900/personal-website?style=social)](https://github.com/jonas8900/personal-website/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/jonas8900/personal-website?style=social)](https://github.com/jonas8900/personal-website/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/jonas8900/personal-website.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/jonas8900/personal-website/stargazers/)
+
+
 
 
 
