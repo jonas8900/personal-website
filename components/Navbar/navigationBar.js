@@ -1,7 +1,6 @@
 import { faEnvelope, faSquarePhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-
 import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
 
@@ -10,6 +9,7 @@ export default function NavigationBar({ isMobile }) {
 
   useEffect(() => {
     function handleMenuAutomaticClose() {
+      // close the menu automatically when the screen size is bigger than 915px
       if (!isMobile) {
         setMenuOpen(false);
       }
@@ -63,11 +63,13 @@ export default function NavigationBar({ isMobile }) {
 const StyledNavigationWrapper = styled.nav`
   padding: 2rem;
   grid-area: 1 / 2 / 2 / 3;
+  z-index: 3;
   @media (max-width: 915px) {
-    justify-self: flex-end;
-    align-self: flex-start;
+    //for mobile devices
     padding: 0;
-    margin: 1rem 0 0 0
+    margin: 0;
+    justify-self: flex-end;
+    grid-area: 1 / 2 / 3 / 3;
   }
 `;
 
@@ -84,9 +86,6 @@ const StyledDesktopUl = styled.ul`
   border-radius: 9px;
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-  @media (max-width: 768px) {
-  }
 `;
 
 const StyledMobileUl = styled.ul`
@@ -94,16 +93,13 @@ const StyledMobileUl = styled.ul`
   display: flex;
   flex-direction: column;
   position: absolute;
-  z-index: 2;
-  margin: 0 auto;
+  margin: auto;
   width: 100%;
   border-radius: 9px;
   padding: 0;
-  right: 0;
   left: 0;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.9);
+  color: white;
+  background-color: var(--description-card-color);
   opacity: ${({ ismenuopen }) => (ismenuopen ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
 `;
@@ -117,13 +113,14 @@ const StyledLiNames = styled.li`
   text-align: center;
   margin: auto;
   cursor: pointer;
-  border-bottom: 1px solid #7393b2;
+  border-bottom: 1px solid #4d4f4e;
   transition: all 0.3s ease-in-out;
 
   &:active {
     background-color: var(--secondary-yellow);
   }
   @media (min-width: 915px) {
+    //for desktop devices
     border-bottom: none;
     border-radius: 45px;
     width: 20%;
@@ -142,11 +139,12 @@ const StyledLiIcons = styled.li`
   padding-left: 1.5rem;
   margin: auto;
   cursor: pointer;
-  border-bottom: 1px solid #7393b2;
+  border-bottom: 1px solid #4d4f4e;
   width: 35%;
   min-width: 8rem; //set min-width for mobile devices
   text-align: center;
   @media (min-width: 915px) {
+    //for desktop devices
     border-bottom: none;
     border-radius: 45px;
     min-width: 2rem;
@@ -163,6 +161,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
     color: var(--primary-blue);
   }
   @media (min-width: 915px) {
+    //for desktop devices
     &:hover {
       color: var(--primary-blue);
     }
@@ -170,11 +169,10 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `;
 
 const StyledMobileMenuIconWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 2rem;
+  margin: 2rem 2rem 1rem auto;
   z-index: 1;
   @media (min-width: 915px) {
+    //for desktop devices
     display: none;
   }
 `;

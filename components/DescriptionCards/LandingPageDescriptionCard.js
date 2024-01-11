@@ -6,10 +6,11 @@ export default function LandingPageDescriptionCard() {
   return (
     <StyledDescriptionCard>
       <StyledImage
-        src={"/images/phoneCallImage.JPG"}
+        src={"/images/phoneCallImageCompressed.jpg"}
         alt="Picture of me while i am at the phone"
         width={1920}
         height={1080}
+        sizes="(max-width: 768px) 300px, (max-width: 1024px) 400px, (max-width: 1400px) 1080px" //for increase performance 
         unoptimized
       />
 
@@ -32,13 +33,12 @@ export default function LandingPageDescriptionCard() {
 
 //Wrapper
 const StyledDescriptionCard = styled.article`
-  display: grid;
+  grid-area: 2 / 2 / 3 / 3; // for positioning the card
+
+  display: grid; // for the elements in the card
   grid-template-columns: 1fr 0.7fr;
   grid-template-rows: 0.6fr repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-area: 2 / 2 / 3 / 3;
-  justify-self: center;
+
   width: 45rem;
   height: 30rem;
   border-radius: 9px;
@@ -48,23 +48,26 @@ const StyledDescriptionCard = styled.article`
   flex-shrink: 1;
 
   @media (min-width: 1921px) {
+    //for large screens
     width: 50rem;
     height: 35rem;
   }
   @media (max-width: 1500px) {
+    //for medium screens
     width: 90%;
     align-self: center;
-    margin: auto auto auto 4rem;
+    margin-left: 4rem;
   }
   @media (max-width: 1024px) {
+    //for small screens
     width: 80%;
     min-width: 22rem;
     height: 80%;
     min-height: 30rem;
-    margin: auto auto auto;
+    margin: auto;
     grid-area: 2 / 1 / 3 / 3;
     grid-template-columns: 1.5fr 0.7fr;
-  grid-template-rows: 0.6fr repeat(2, 1fr);
+    grid-template-rows: 0.6fr repeat(2, 1fr);
   }
 `;
 
@@ -76,7 +79,7 @@ const StyledIconWrapper = styled.div`
   gap: 1rem;
   margin: 0 1rem 1rem 0;
   padding: 1rem;
-  @media (max-width: 915px) {
+  @media (max-width: 1024px) {
     flex-direction: row;
     grid-area: 3 / 1 / 4 / 3;
     gap: 0.7rem;
@@ -97,7 +100,8 @@ const StyledImage = styled(Image)`
     opacity: 1;
     z-index: 1;
   }
-  @media (max-width: 915px) {
+  @media (max-width: 1024px) {
+    //for mobile device
     &:active {
       opacity: 1;
       z-index: 1;
@@ -125,15 +129,16 @@ const StyledParagraph = styled.p`
   grid-area: 2 / 1 / 4 / 2;
   font-weight: 400;
   font-size: var(--font-size-greater-text);
-  justify-self: center;
-  align-self: flex-start;
   margin: 2rem 4rem auto 4.5rem;
   @media (min-width: 1921px) {
     font-size: 18px;
     margin: 2rem 6rem auto 4.5rem;
   }
+  @media (max-width: 1500px) {
+    margin: 0rem 4rem auto 4.5rem;
+  }
   @media (max-width: 915px) {
     grid-area: 2 / 1 / 3 / 3;
-    margin: 1rem;
+    margin: 5%;
   }
 `;
