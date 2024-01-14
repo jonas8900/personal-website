@@ -3,6 +3,7 @@ import styled, { css, keyframes } from "styled-components";
 import Photos from "./Photos";
 import Age from "../Calculates/BirthDayCalculations";
 import StatBox from "./Statbox";
+import { SortedAnimation } from "../Animations/ImageSortingAnimation";
 
 export default function PhotoBox() {
   //for the Statbox
@@ -93,12 +94,6 @@ export default function PhotoBox() {
 }
 
 //animation to put the first photo smooth in the background of the other photos
-
-const SortedAnimation = keyframes`
-  0% { right: 50%; top: 0%; z-index: 3; }
-  50% { right: 45%; top: 2%; z-index: 1; }
-  100% { right: 30%; top: 10%; z-index: 1; }
-`;
 
 //first Photo in the Photobox
 
@@ -206,7 +201,7 @@ const StyledParentForStatbox = styled.div`
   transform: translate(50%);
 `;
 
-//Statboxes for each photo to show the information about 
+//Statboxes for each photo to show the information about
 const StyledFirstStatbox = styled(StatBox)``;
 const StyledSecondStatbox = styled(StatBox)``;
 const StyledThirdStatbox = styled(StatBox)``;
@@ -339,7 +334,7 @@ const StyledPhotoboxWrapper = styled.section`
     opacity: ${({ $counterforphotopositioning }) =>
       $counterforphotopositioning === 2 ? "1" : "0"};
   }
-//create switch case for the different positions of the photos in the photobox with 3 different positions for mobile devices
+  //create switch case for the different positions of the photos in the photobox with 3 different positions for mobile devices
   @media (max-width: 1024px) {
     &:active ${StyledFirstPhotoArticle} {
       rotate: 0deg;
