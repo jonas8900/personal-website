@@ -8,25 +8,24 @@ export default function ProjectDescriptionCard({ className }) {
     <StyledProjectDesriptionCard className={className}>
       <StyledHeadline>Friends</StyledHeadline>
       <StyledInformation>
-        <p>
-          In meiner App namens <code>Friends</code> dreht sich alles um die
-          Organisation regelmäßiger Veranstaltungen in Gruppen von Freunden, sei
-          es in größeren oder kleineren Zusammenkünften.
-        </p>
-        <p>
-          Oft gehen solche Treffen im hektischen Alltag unter, und man vergisst
-          schnell, welche vielfältigen Möglichkeiten man als Gruppe hat. Mein
-          Ziel ist es, dieses Problem mithilfe der App zu lösen. Mit der
-          Anwendung können Nutzer Aktivitäten eintragen, diese mögen,
-          Abstimmungen durchführen und Veranstaltungen planen.
-        </p>
-        <p>
-          Zusätzlich besteht die Möglichkeit, für jede Veranstaltung eine Liste
-          zu führen, auf der ersichtlich ist, welcher Teilnehmer welchen
-          Gegenstand zur Veranstaltung mitbringt. Darüber hinaus ist es möglich,
-          verschiedene Gruppen von Freunden zu erstellen. Verwendete Techniken:
-        </p>
+        In meiner App namens <code>Friends</code> dreht sich alles um die
+        Organisation regelmäßiger Veranstaltungen in Gruppen von Freunden, sei
+        es in größeren oder kleineren Zusammenkünften.
       </StyledInformation>
+      <StyledInformation>
+        Oft gehen solche Treffen im hektischen Alltag unter, und man vergisst
+        schnell, welche vielfältigen Möglichkeiten man als Gruppe hat. Mein Ziel
+        ist es, dieses Problem mithilfe der App zu lösen. Mit der Anwendung
+        können Nutzer Aktivitäten eintragen, diese mögen, Abstimmungen
+        durchführen und Veranstaltungen planen.
+      </StyledInformation>
+      <StyledInformation>
+        Zusätzlich besteht die Möglichkeit, für jede Veranstaltung eine Liste zu
+        führen, auf der ersichtlich ist, welcher Teilnehmer welchen Gegenstand
+        zur Veranstaltung mitbringt. Darüber hinaus ist es möglich, verschiedene
+        Gruppen von Freunden zu erstellen. Verwendete Techniken:
+      </StyledInformation>
+
       <StyledIcons>
         <FriendsSkillSetIcons />
       </StyledIcons>

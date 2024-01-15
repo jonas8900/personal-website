@@ -1,8 +1,8 @@
 import Image from "next/image";
 import styled from "styled-components";
-import AllSkillSetIcons from "../Icons/AllSkillSetIcons";
-import InformationParagraphForCards from "../Paragraphs/InformationParagraphForCards";
-import HeadlinesForDescriptionCards from "../Headlines/HeadlinesForDescriptionCards";
+import AllSkillSetIcons from "../../Icons/AllSkillSetIcons";
+import InformationParagraphForCards from "../../Paragraphs/InformationParagraphForCards";
+import HeadlinesForDescriptionCards from "../../Headlines/HeadlinesForDescriptionCards";
 
 export default function LandingPageDescriptionCard() {
   return (

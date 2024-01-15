@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import NavigationBar from "@/components/Navbar/navigationBar";
-import LandingPageDescriptionCard from "@/components/DescriptionCards/LandingPageDescriptionCard";
-import PhotoBox from "@/components/photoBoxes/photoBox";
+import NavigationBar from "@/components/Landingpage/Navbar/navigationBar";
+import LandingPageDescriptionCard from "@/components/Landingpage/DescriptionCards/LandingPageDescriptionCard";
+import PhotoBox from "@/components/Landingpage/photoBoxes/photoBox";
 import AllWireFrames from "@/components/WireFramesForFriendsProject/AllWireFrames";
 import ProjectBranch from "@/components/ProjectBranch/ProjectBranch";
 

@@ -103,9 +103,21 @@ const StyledWireFramesContainer = styled.section`
   margin-left: 15rem;
   cursor: pointer;
 
-  &:hover ${StyledImage}, &:active ${StyledImage} {
+  &:hover ${StyledImage} {
     rotate: 0deg;
     scale: 1;
+    @media (max-width: 1024px) {
+      scale: 0.6;
+      rotate: 0deg;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-left: 2rem;
+    margin-top: 8rem;
+  }
+
+  &:active ${StyledImage} {
     @media (max-width: 1024px) {
       scale: 0.6;
       rotate: 0deg;
