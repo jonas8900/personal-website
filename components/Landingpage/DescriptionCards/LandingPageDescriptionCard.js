@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styled from "styled-components";
-import AllSkillSetIcons from "../Icons/AllSkillSetIcons";
+import AllSkillSetIcons from "../../Icons/AllSkillSetIcons";
+import InformationParagraphForCards from "../../Paragraphs/InformationParagraphForCards";
+import HeadlinesForDescriptionCards from "../../Headlines/HeadlinesForDescriptionCards";
 
 export default function LandingPageDescriptionCard() {
   return (
@@ -10,7 +12,7 @@ export default function LandingPageDescriptionCard() {
         alt="Picture of me while i am at the phone"
         width={1920}
         height={1080}
-        sizes="(max-width: 768px) 300px, (max-width: 1024px) 400px, (max-width: 1400px) 1080px" //for increase performance 
+        sizes="(max-width: 768px) 300px, (max-width: 1024px) 400px, (max-width: 1400px) 1080px" //for increase performance
         unoptimized
       />
 
@@ -110,35 +112,17 @@ const StyledImage = styled(Image)`
 `;
 
 //headline for the card
-const StyledHeadline = styled.h1`
+const StyledHeadline = styled(HeadlinesForDescriptionCards)`
   grid-area: 1 / 1 / 2 / 2;
-  font-weight: 500;
-  font-size: var(--font-size-headline);
-  margin: 2rem auto auto 4rem;
-  padding: 0.5rem;
-  border-bottom: 2px solid #dfa100;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 1;
   @media (max-width: 915px) {
     grid-area: 1 / 1 / 2 / 3;
   }
 `;
 
 //Text for the card
-const StyledParagraph = styled.p`
+const StyledParagraph = styled(InformationParagraphForCards)`
   grid-area: 2 / 1 / 4 / 2;
-  font-weight: 400;
-  font-size: var(--font-size-greater-text);
-  margin: 2rem 4rem auto 4.5rem;
-  @media (min-width: 1921px) {
-    font-size: 18px;
-    margin: 2rem 6rem auto 4.5rem;
-  }
-  @media (max-width: 1500px) {
-    margin: 0rem 4rem auto 4.5rem;
-  }
   @media (max-width: 915px) {
     grid-area: 2 / 1 / 3 / 3;
-    margin: 5%;
   }
 `;

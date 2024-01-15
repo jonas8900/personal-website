@@ -43,8 +43,8 @@ export default function NavigationBar({ isMobile }) {
         </>
       ) : (
         <StyledDesktopUl>
-          <StyledLiNames>Projekte</StyledLiNames>
           <StyledLiNames>Über mich</StyledLiNames>
+          <StyledLiNames>Projekte</StyledLiNames>
           <StyledLiNames>Kontakt</StyledLiNames>
           <StyledLiIcons>
             <StyledIcon icon={faSquarePhone} />
