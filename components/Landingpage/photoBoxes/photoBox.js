@@ -92,7 +92,7 @@ export default function PhotoBox() {
         onMouseLeave={() => setIsHoveringOverPhotobox(false)}
         onTouchStart={handleTouchStartOnMobile}
         onTouchCancel={handleCancelTouchOnMobile}
-        photolist={photoList}>
+        $photolist={photoList}>
         {/* each photo gets there own Statbox, so i use fragments here to get a unique key for each child in the function  */}
         {photoList.map((photo) => (
           <React.Fragment key={photo.id}>
@@ -184,76 +184,76 @@ const StyledPhotoboxWrapper = styled.section`
   // use nth-of-type to get the right photo and statbox to animate while hovering and clicking on the photobox
   &:hover ${StyledPhotoArticle}:nth-of-type(1) {
     rotate: 0deg;
-    right: ${({ photolist }) =>
-      photolist.find((photo) => photo.id === 1).rightWhileHover}%;
-    top: ${({ photolist }) =>
-      photolist.find((photo) => photo.id === 1).topWhileHover}%;
+    right: ${({ $photolist }) =>
+      $photolist.find((photo) => photo.id === 1).rightWhileHover}%;
+    top: ${({ $photolist }) =>
+      $photolist.find((photo) => photo.id === 1).topWhileHover}%;
   }
   &:hover ${StyledStatBox}:nth-child(1) {
-    opacity: ${({ photolist }) =>
-      photolist.find((photo) => photo.id === 1 && "1")};
+    opacity: ${({ $photolist }) =>
+      $photolist.find((photo) => photo.id === 1 && "1")};
   }
 
   &:hover ${StyledPhotoArticle}:nth-of-type(2) {
     rotate: 0deg;
-    right: ${({ photolist }) =>
-      photolist.find((photo) => photo.id === 2).rightWhileHover}%;
-    top: ${({ photolist }) =>
-      photolist.find((photo) => photo.id === 2).topWhileHover}%;
+    right: ${({ $photolist }) =>
+      $photolist.find((photo) => photo.id === 2).rightWhileHover}%;
+    top: ${({ $photolist }) =>
+      $photolist.find((photo) => photo.id === 2).topWhileHover}%;
   }
   &:hover ${StyledStatBox}:nth-child(2) {
-    opacity: ${({ photolist }) =>
-      photolist.find((photo) => photo.id === 2 && "1")};
+    opacity: ${({ $photolist }) =>
+      $photolist.find((photo) => photo.id === 2 && "1")};
   }
 
   &:hover ${StyledPhotoArticle}:nth-of-type(3) {
     rotate: 0deg;
-    right: ${({ photolist }) =>
-      photolist.find((photo) => photo.id === 3).rightWhileHover}%;
-    top: ${({ photolist }) =>
-      photolist.find((photo) => photo.id === 3).topWhileHover}%;
+    right: ${({ $photolist }) =>
+      $photolist.find((photo) => photo.id === 3).rightWhileHover}%;
+    top: ${({ $photolist }) =>
+      $photolist.find((photo) => photo.id === 3).topWhileHover}%;
   }
   &:hover ${StyledStatBox}:nth-child(3) {
-    opacity: ${({ photolist }) =>
-      photolist.find((photo) => photo.id === 3 && "1")};
+    opacity: ${({ $photolist }) =>
+      $photolist.find((photo) => photo.id === 3 && "1")};
   }
 
   @media (max-width: 1024px) {
     &:active ${StyledPhotoArticle}:nth-of-type(1) {
       rotate: 0deg;
-      right: ${({ photolist }) =>
-        photolist.find((photo) => photo.id === 1).rightWhileHover}%;
-      top: ${({ photolist }) =>
-        photolist.find((photo) => photo.id === 1).topWhileHover}%;
+      right: ${({ $photolist }) =>
+        $photolist.find((photo) => photo.id === 1).rightWhileHover}%;
+      top: ${({ $photolist }) =>
+        $photolist.find((photo) => photo.id === 1).topWhileHover}%;
     }
     &:active ${StyledStatBox}:nth-child(1) {
-      opacity: ${({ photolist }) =>
-        photolist.find((photo) => photo.id === 1 && "1")};
+      opacity: ${({ $photolist }) =>
+        $photolist.find((photo) => photo.id === 1 && "1")};
     }
 
     &:active ${StyledPhotoArticle}:nth-of-type(2) {
       rotate: 0deg;
-      right: ${({ photolist }) =>
-        photolist.find((photo) => photo.id === 2).rightWhileHover}%;
-      top: ${({ photolist }) =>
-        photolist.find((photo) => photo.id === 2).topWhileHover}%;
+      right: ${({ $photolist }) =>
+        $photolist.find((photo) => photo.id === 2).rightWhileHover}%;
+      top: ${({ $photolist }) =>
+        $photolist.find((photo) => photo.id === 2).topWhileHover}%;
     }
     &:active ${StyledStatBox}:nth-child(2) {
-      opacity: ${({ photolist }) =>
-        photolist.find((photo) => photo.id === 2 && "1")};
+      opacity: ${({ $photolist }) =>
+        $photolist.find((photo) => photo.id === 2 && "1")};
     }
 
     &:active ${StyledPhotoArticle}:nth-of-type(3) {
       rotate: 0deg;
-      right: ${({ photolist }) =>
-        photolist.find((photo) => photo.id === 3).rightWhileHover}%;
-      top: ${({ photolist }) =>
-        photolist.find((photo) => photo.id === 3).topWhileHover}%;
+      right: ${({ $photolist }) =>
+        $photolist.find((photo) => photo.id === 3).rightWhileHover}%;
+      top: ${({ $photolist }) =>
+        $photolist.find((photo) => photo.id === 3).topWhileHover}%;
     }
 
     &:active ${StyledStatBox}:nth-child(3) {
-      opacity: ${({ photolist }) =>
-        photolist.find((photo) => photo.id === 3 && "1")};
+      opacity: ${({ $photolist }) =>
+        $photolist.find((photo) => photo.id === 3 && "1")};
     }
   }
 `;

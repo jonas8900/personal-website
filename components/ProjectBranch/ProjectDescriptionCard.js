@@ -3,32 +3,17 @@ import InformationParagraphForCards from "../Paragraphs/InformationParagraphForC
 import HeadlinesForDescriptionCards from "../Headlines/HeadlinesForDescriptionCards";
 import FriendsSkillSetIcons from "../Icons/FriendsUsedIcons";
 
-export default function ProjectDescriptionCard({ className }) {
+export default function ProjectDescriptionCard({
+  className,
+  headline,
+  infotext,
+  icons,
+}) {
   return (
     <StyledProjectDesriptionCard className={className}>
-      <StyledHeadline>Friends</StyledHeadline>
-      <StyledInformation>
-        In meiner App namens <code>Friends</code> dreht sich alles um die
-        Organisation regelmäßiger Veranstaltungen in Gruppen von Freunden, sei
-        es in größeren oder kleineren Zusammenkünften.
-      </StyledInformation>
-      <StyledInformation>
-        Oft gehen solche Treffen im hektischen Alltag unter, und man vergisst
-        schnell, welche vielfältigen Möglichkeiten man als Gruppe hat. Mein Ziel
-        ist es, dieses Problem mithilfe der App zu lösen. Mit der Anwendung
-        können Nutzer Aktivitäten eintragen, diese mögen, Abstimmungen
-        durchführen und Veranstaltungen planen.
-      </StyledInformation>
-      <StyledInformation>
-        Zusätzlich besteht die Möglichkeit, für jede Veranstaltung eine Liste zu
-        führen, auf der ersichtlich ist, welcher Teilnehmer welchen Gegenstand
-        zur Veranstaltung mitbringt. Darüber hinaus ist es möglich, verschiedene
-        Gruppen von Freunden zu erstellen. Verwendete Techniken:
-      </StyledInformation>
-
-      <StyledIcons>
-        <FriendsSkillSetIcons />
-      </StyledIcons>
+      <StyledHeadline>{headline}</StyledHeadline>
+      <StyledInformation>{infotext}</StyledInformation>
+      <StyledIcons>{icons}</StyledIcons>
     </StyledProjectDesriptionCard>
   );
 }
@@ -37,16 +22,30 @@ const StyledProjectDesriptionCard = styled.div`
   position: absolute;
   background-color: white;
   width: 30%;
-  height: 34rem;
+  height: 40rem;
   border-radius: 0px 40px 40px 40px;
   top: 19.7rem; // to get the height of the branch: 5rem from the projectheadline + 2.4rem from the height of the headline and 12 rem from the height of the wireframes container
   right: 8%;
   z-index: 10;
   filter: drop-shadow(10px 10px 4px rgba(0, 0, 0, 0.2));
+  @media (max-width: 1920) {
+    height: 34rem;
+  }
+  @media (max-width: 1440px) {
+    width: 40%;
+    right: 4%;
+  }
   @media (max-width: 1024px) {
     width: 90%;
-    top: 19.6rem;
-    height: 30rem;
+    top: 10rem;
+    height: 35rem;
+    border-radius: 40px;
+    right: 5%;
+  }
+  @media (max-width: 500px) {
+    width: 90%;
+    top: 10rem;
+    height: 48rem;
     border-radius: 40px;
     right: 5%;
   }

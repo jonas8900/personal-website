@@ -93,6 +93,7 @@ const StyledImage = styled(Image)`
   @media (max-width: 1024px) {
     scale: 0.6;
     rotate: 0deg;
+    top: 60%;
   }
 `;
 
