@@ -83,7 +83,7 @@ const StyledMiddleBranchDiv = styled(ProjectMiddleBranch)`
 // DesktopImage
 
 const StyledDesktopImage = styled(DesktopImage)`
-  margin: 0rem 2rem auto auto;
+  margin: -10rem 2rem auto auto;
   width: 55%;
   height: 100%;
   z-index: 99;

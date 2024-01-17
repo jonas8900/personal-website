@@ -6,12 +6,14 @@ import AllWireFrames from "@/components/ProjectOne/WireFramesForFriendsProject/A
 import ProjectBranchFriends from "@/components/ProjectOne/ProjectBranchFriends";
 import ProjectBranchEmbs from "@/components/ProjectTwo/ProjectBranchEmbs";
 import ContactPage from "@/components/Contact/ContactPage";
+import WebsiteHeadline from "@/components/Landingpage/Websiteheadline";
 
 export default function Page({ isMobile }) {
   return (
     <StyledMain>
       <StyledLandingPageWrapper>
         <NavigationBar isMobile={isMobile} />
+        <WebsiteHeadline />
         <LandingPageDescriptionCard />
         <PhotoBox />
       </StyledLandingPageWrapper>

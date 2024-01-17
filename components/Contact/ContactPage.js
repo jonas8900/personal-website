@@ -33,6 +33,9 @@ export default function ContactPage({ className }) {
         <StyledInquiryWrapper>
           <Styledlabel>Anfrageart</Styledlabel>
           <Styledselect name="anfrageart">
+            <StyledOption disabled selected value>
+              -- Wähle eine Option --
+            </StyledOption>
             <StyledOption value="anfrage">Website</StyledOption>
             <StyledOption value="feedback">Applikation</StyledOption>
             <StyledOption value="sonstiges">Sonstiges</StyledOption>
@@ -41,6 +44,9 @@ export default function ContactPage({ className }) {
         <StyledBudgetWrapper>
           <Styledlabel id="budget">Budget</Styledlabel>
           <Styledselect name="budget">
+            <StyledOption disabled selected value>
+              -- Wähle eine Option --
+            </StyledOption>
             <StyledOption value="unter 200 EUR">unter 200€</StyledOption>
             <StyledOption value="200 - 500 EUR">200€ - 500€ </StyledOption>
             <StyledOption value="500 - 1000 EUR">500€ - 1.000€ </StyledOption>
