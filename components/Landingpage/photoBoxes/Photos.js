@@ -27,8 +27,8 @@ const StyledPhoto = styled.article`
   align-self: center;
   width: 20rem;
   height: 26rem;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+  -webkit-box-shadow: var(--box-shadow-main);
+  box-shadow: var(--box-shadow-main);
   @media (max-width: 1299px) {
     width: 15rem;
   }

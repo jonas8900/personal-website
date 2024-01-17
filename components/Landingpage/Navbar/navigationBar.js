@@ -17,6 +17,14 @@ export default function NavigationBar({ isMobile }) {
     handleMenuAutomaticClose();
   }, [isMobile]);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMenuOpen]);
+
   return (
     <StyledNavigationWrapper>
       {isMobile ? (
@@ -29,17 +37,19 @@ export default function NavigationBar({ isMobile }) {
               toggle={setMenuOpen}
             />
           </StyledMobileMenuIconWrapper>
-          <StyledMobileUl ismenuopen={isMenuOpen ? isMenuOpen : undefined}>
-            <StyledLiNames>Projekte</StyledLiNames>
-            <StyledLiNames>Über mich</StyledLiNames>
-            <StyledLiNames>Kontakt</StyledLiNames>
-            <StyledLiIcons>
-              <StyledIcon icon={faSquarePhone} />
-            </StyledLiIcons>
-            <StyledLiIcons>
-              <StyledIcon icon={faEnvelope} />
-            </StyledLiIcons>
-          </StyledMobileUl>
+          <StyledBackgroundDiv ismenuopen={isMenuOpen ? isMenuOpen : undefined}>
+            <StyledMobileUl ismenuopen={isMenuOpen ? isMenuOpen : undefined}>
+              <StyledLiNames>Projekte</StyledLiNames>
+              <StyledLiNames>Über mich</StyledLiNames>
+              <StyledLiNames>Kontakt</StyledLiNames>
+              <StyledLiIcons>
+                <StyledIcon icon={faSquarePhone} />
+              </StyledLiIcons>
+              <StyledLiIcons>
+                <StyledIcon icon={faEnvelope} />
+              </StyledLiIcons>
+            </StyledMobileUl>
+          </StyledBackgroundDiv>
         </>
       ) : (
         <StyledDesktopUl>
@@ -85,7 +95,8 @@ const StyledDesktopUl = styled.ul`
   align-items: center;
   border-radius: 9px;
   background: #fff;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: var(--box-shadow-main);
+  box-shadow: var(--box-shadow-main);
 `;
 
 const StyledMobileUl = styled.ul`
@@ -102,6 +113,15 @@ const StyledMobileUl = styled.ul`
   background-color: var(--description-card-color);
   opacity: ${({ ismenuopen }) => (ismenuopen ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
+`;
+
+const StyledBackgroundDiv = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: var(--description-card-color);
+  position: fixed;
+  left: 0;
+  opacity: ${({ ismenuopen }) => (ismenuopen ? 1 : 0)};
 `;
 
 const StyledLiNames = styled.li`
@@ -170,7 +190,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 
 const StyledMobileMenuIconWrapper = styled.div`
   margin: 2rem 2rem 1rem auto;
-  z-index: 1;
+  z-index: 5;
   @media (min-width: 915px) {
     //for desktop devices
     display: none;

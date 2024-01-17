@@ -1,18 +1,18 @@
 import styled from "styled-components";
 import InformationParagraphForCards from "../Paragraphs/InformationParagraphForCards";
 import HeadlinesForDescriptionCards from "../Headlines/HeadlinesForDescriptionCards";
-import FriendsSkillSetIcons from "../Icons/FriendsUsedIcons";
 
 export default function ProjectDescriptionCard({
   className,
   headline,
   infotext,
   icons,
+  fontcolor,
 }) {
   return (
     <StyledProjectDesriptionCard className={className}>
-      <StyledHeadline>{headline}</StyledHeadline>
-      <StyledInformation>{infotext}</StyledInformation>
+      <StyledHeadline fontcolor={fontcolor}>{headline}</StyledHeadline>
+      <StyledInformation fontcolor={fontcolor}>{infotext}</StyledInformation>
       <StyledIcons>{icons}</StyledIcons>
     </StyledProjectDesriptionCard>
   );
@@ -20,6 +20,8 @@ export default function ProjectDescriptionCard({
 
 const StyledProjectDesriptionCard = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   width: 30%;
   height: 40rem;
@@ -53,20 +55,20 @@ const StyledProjectDesriptionCard = styled.div`
 
 const StyledHeadline = styled(HeadlinesForDescriptionCards)`
   border-bottom: 2px solid #dfa100;
-  width: 20%;
+  width: 30%;
+  margin-bottom: 2rem;
   text-align: center;
-  color: var(--primary-blue);
+  color: ${({ fontcolor }) => fontcolor};
 `;
 
 const StyledInformation = styled(InformationParagraphForCards)`
-  color: var(--primary-blue);
-  margin: 2rem 2rem auto 2rem;
+  color: ${({ fontcolor }) => fontcolor};
+  margin: 0rem 2rem auto 2rem;
 `;
 
 const StyledIcons = styled.article`
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
-
   gap: 1rem;
 `;
