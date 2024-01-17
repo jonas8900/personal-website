@@ -46,7 +46,8 @@ const StyledDescriptionCard = styled.article`
   border-radius: 9px;
   background-color: #7393b2;
   color: white;
-  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: var(--box-shadow-cards);
+  box-shadow: var(--box-shadow-cards);
   flex-shrink: 1;
 
   @media (min-width: 1921px) {

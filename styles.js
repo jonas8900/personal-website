@@ -38,5 +38,7 @@ export default createGlobalStyle`
       --large-mobile-breakpoint: 915px;
       --small-mobile-breakpoint: 768px;
       --large-desktop-breakpoint: 1921px;
+      --box-shadow-main: 5px 3px 10px 3px rgba(82, 82, 82, 0.15);
+      --box-shadow-cards: 5px 3px 10px 3px rgba(82, 82, 82, 0.5);
     }
 `;
