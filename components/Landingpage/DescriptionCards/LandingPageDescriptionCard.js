@@ -74,10 +74,11 @@ const StyledDescriptionCard = styled.article`
   @media (max-width: 500px) {
     //for mobile devices
 
-    width: 100%;
+    width: 90%;
     height: 80%;
     min-height: 30rem;
-    margin: 30rem 0 0 0;
+    min-width: 18rem;
+    margin: 35rem 0 0 0;
   }
 `;
 
