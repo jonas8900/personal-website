@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export default function HeadlinesForDescriptionCards({ children, className }) {
   return <StyledHeadline className={className}>{children}</StyledHeadline>;
@@ -12,5 +12,4 @@ const StyledHeadline = styled.h2`
   border-bottom: 2px solid #dfa100;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 1;
-
 `;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import InformationParagraphForCards from "../Paragraphs/InformationParagraphForCards";
 import HeadlinesForDescriptionCards from "../Headlines/HeadlinesForDescriptionCards";
 
@@ -9,6 +9,7 @@ export default function ProjectDescriptionCard({
   icons,
   fontcolor,
 }) {
+  //description card for the project page
   return (
     <StyledProjectDesriptionCard className={className}>
       <StyledHeadline fontcolor={fontcolor}>{headline}</StyledHeadline>
@@ -59,6 +60,9 @@ const StyledHeadline = styled(HeadlinesForDescriptionCards)`
   margin-bottom: 2rem;
   text-align: center;
   color: ${({ fontcolor }) => fontcolor};
+  @media (max-width: 600px) {
+    width: 50%;
+  }
 `;
 
 const StyledInformation = styled(InformationParagraphForCards)`

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export default function ContactPage({ className }) {
   function handleSubmit(event) {
@@ -8,15 +8,14 @@ export default function ContactPage({ className }) {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
 
-    console.log(data);
-
     event.target.reset();
   }
 
   return (
     <div className={className}>
-      <StyledH1> Kontakt</StyledH1>
-
+      {" "}
+      {/* add a div with the prop className to style the ContactPage in the index.js */}
+      <StyledH1 id="contact"> Kontakt</StyledH1>
       <Styledform onSubmit={handleSubmit}>
         <StyledNameInputWrapper>
           <Styledlabel id="name">Name*</Styledlabel>
@@ -32,31 +31,29 @@ export default function ContactPage({ className }) {
         </StyledMailInputWrapper>
         <StyledInquiryWrapper>
           <Styledlabel>Anfrageart</Styledlabel>
-          <Styledselect name="anfrageart">
-            <StyledOption disabled selected value>
+          <Styledselect
+            name="anfrageart"
+            defaultValue="-- Wähle eine Option --">
+            <option disabled value="-- Wähle eine Option --">
               -- Wähle eine Option --
-            </StyledOption>
-            <StyledOption value="anfrage">Website</StyledOption>
-            <StyledOption value="feedback">Applikation</StyledOption>
-            <StyledOption value="sonstiges">Sonstiges</StyledOption>
+            </option>
+            <option value="anfrage">Website</option>
+            <option value="feedback">Applikation</option>
+            <option value="sonstiges">Sonstiges</option>
           </Styledselect>
         </StyledInquiryWrapper>
         <StyledBudgetWrapper>
           <Styledlabel id="budget">Budget</Styledlabel>
-          <Styledselect name="budget">
-            <StyledOption disabled selected value>
+          <Styledselect name="budget" defaultValue="-- Wähle eine Option --">
+            <option disabled value="-- Wähle eine Option --">
               -- Wähle eine Option --
-            </StyledOption>
-            <StyledOption value="unter 200 EUR">unter 200€</StyledOption>
-            <StyledOption value="200 - 500 EUR">200€ - 500€ </StyledOption>
-            <StyledOption value="500 - 1000 EUR">500€ - 1.000€ </StyledOption>
-            <StyledOption value="1000 - 2000 EUR">
-              1.000€ - 2.000€{" "}
-            </StyledOption>
-            <StyledOption value="2000 - 5000 EUR">
-              2.000€ - 5.000€{" "}
-            </StyledOption>
-            <StyledOption value="über 5000 EUR">über 5.000€ </StyledOption>
+            </option>
+            <option value="unter 200 EUR">unter 200€</option>
+            <option value="200 - 500 EUR">200€ - 500€ </option>
+            <option value="500 - 1000 EUR">500€ - 1.000€ </option>
+            <option value="1000 - 2000 EUR">1.000€ - 2.000€</option>
+            <option value="2000 - 5000 EUR">2.000€ - 5.000€</option>
+            <option value="über 5000 EUR">über 5.000€ </option>
           </Styledselect>
         </StyledBudgetWrapper>
         <StyledTextAreaWrapper>
@@ -76,6 +73,11 @@ const StyledH1 = styled.h1`
   border-bottom: 4px solid var(--secondary-yellow);
   width: 15%;
   margin: 6rem auto 0rem auto;
+
+  @media (max-width: 1024px) {
+    width: 40%;
+    font-size: 35px;
+  }
 `;
 
 const Styledform = styled.form`
@@ -94,7 +96,7 @@ const Styledform = styled.form`
   }
 `;
 
-//all sections for input and labels together
+//wrapper for each input and label
 const StyledNameInputWrapper = styled.section`
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
@@ -195,8 +197,4 @@ const Styledtextarea = styled.textarea`
   @media (max-width: 1024px) {
     width: 22rem;
   }
-`;
-
-const StyledOption = styled.option`
-  height: 4rem;
 `;

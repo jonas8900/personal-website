@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import ProjectDescriptionCard from "../ProjectBranch/ProjectDescriptionCard";
 import FriendsSkillSetIcons from "../Icons/FriendsUsedIcons";
 import ProjectMiddleBranch from "../ProjectBranch/ProjectMiddleBranch";
@@ -48,14 +48,15 @@ const StyledBranchSection = styled.section`
 
 const StyledProjectDescriptionCard = styled(ProjectDescriptionCard)`
   background-color: var(--description-card-color);
-  margin: -5px 0rem 0rem 4rem;
+  margin: -5px 0rem 0rem 8%;
 
   border-radius: 40px 0px 40px 40px;
   height: 32rem;
   position: static;
   @media (max-width: 500px) {
     height: 42rem;
-    margin: auto;
+    margin: -5px auto auto auto;
+    border-radius: 40px;
   }
 `;
 

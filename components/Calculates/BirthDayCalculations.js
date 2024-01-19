@@ -1,5 +1,5 @@
 export default function Ages({ children }) {
-  //calculate the age for the Statboxes in the Photobox for the future
+  //calculate the age for the Statboxes in the Photobox for an automatic update of the age
   function handleAges(DateOfBirth) {
     const today = new Date();
     const birthDay = new Date(DateOfBirth);

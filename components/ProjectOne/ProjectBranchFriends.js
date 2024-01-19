@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import ProjectDescriptionCard from "../ProjectBranch/ProjectDescriptionCard";
 import FriendsSkillSetIcons from "../Icons/FriendsUsedIcons";
 import ProjectMiddleBranch from "../ProjectBranch/ProjectMiddleBranch";

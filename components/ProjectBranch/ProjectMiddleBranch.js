@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export default function ProjectMiddleBranch({ className }) {
+  // the branch in the middle of the project page
   return <StyledMiddleBranchDiv className={className} />;
 }
 

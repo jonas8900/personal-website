@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 export default function InformationParagraphForCards({children, className}) {
+
+  //paragraph for the description cards on the project page
     return(
         <StyledParagraph className={className}>
             {children}

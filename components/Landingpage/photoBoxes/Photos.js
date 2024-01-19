@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export default function Photos({ alt, className, src }) {
   //photo for photobox in about me section

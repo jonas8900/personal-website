@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import Photos from "./Photos";
 import Age from "../../Calculates/BirthDayCalculations";
 import StatBox from "./Statbox";
@@ -63,7 +63,6 @@ export default function PhotoBox() {
   function handleCancelTouchOnMobile() {
     setIsHoveringOverPhotobox(false);
   }
-  console.log(isHoveringOverPhotobox);
   //for the pictures and picture animations
 
   const [photoList, setPhotoList] = useState(defaultPhotoData);
@@ -131,7 +130,7 @@ const StyledPhotoArticle = styled(Photos)`
     rotate 0.3s ease-in-out;
 
   z-index: ${({ index }) => index && index};
-  @media (max-width: 1024px) {
+  @media (max-width: 1299px) {
     width: 60%;
     max-width: 15rem;
     height: 20rem;
@@ -148,7 +147,7 @@ const StyledParentForStatbox = styled.div`
   right: 50%;
   transform: translate(50%);
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1299px) {
     top: 20rem;
   }
 `;
@@ -163,21 +162,21 @@ const StyledPhotoboxWrapper = styled.section`
   justify-self: center;
   display: flex;
   position: relative;
+
   cursor: pointer;
   transition: margin-right 0.5s ease-in-out;
-  @media (max-width: 1024px) {
-    grid-area: 3 / 1 / 4 / 3;
-    width: 100%;
-    margin-bottom: 25rem;
-  }
   @media (max-width: 915px) {
-    margin-top: 5rem;
+    margin-top: 0rem;
   }
 
-  @media (min-width: 1299px) {
+  @media (max-width: 1299px) {
+    width: 100%;
+  }
+  @media (min-width: 1450px) {
+    width: 60%;
     margin-right: 4rem;
     &:hover {
-      margin-right: 12rem;
+      margin-right: 8rem;
     }
   }
 
