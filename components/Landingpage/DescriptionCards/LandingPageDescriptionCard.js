@@ -71,6 +71,14 @@ const StyledDescriptionCard = styled.article`
     height: 80%;
     min-height: 30rem;
   }
+  @media (max-width: 500px) {
+    //for mobile devices
+
+    width: 100%;
+    height: 80%;
+    min-height: 30rem;
+    margin: 30rem 0 0 0;
+  }
 `;
 
 const StyledIconWrapper = styled.div`

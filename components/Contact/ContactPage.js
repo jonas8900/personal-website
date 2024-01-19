@@ -159,6 +159,9 @@ const Styledlabel = styled.label`
   font-size: 14px;
   font-weight: 600;
   margin: 6px 6px;
+  @media (max-width: 500px) {
+    margin-left: 1rem;
+  }
 `;
 
 const Styledinput = styled.input`
@@ -170,6 +173,10 @@ const Styledinput = styled.input`
   cursor: text;
   -webkit-box-shadow: var(--box-shadow-main);
   box-shadow: var(--box-shadow-main);
+  @media (max-width: 500px) {
+    max-width: 70%;
+    margin: auto;
+  }
 `;
 
 const Styledselect = styled.select`
@@ -183,6 +190,10 @@ const Styledselect = styled.select`
 
   -webkit-box-shadow: var(--box-shadow-main);
   box-shadow: var(--box-shadow-main);
+  @media (max-width: 500px) {
+    max-width: 70%;
+    margin: auto;
+  }
 `;
 
 const Styledtextarea = styled.textarea`
@@ -193,6 +204,10 @@ const Styledtextarea = styled.textarea`
   padding: 1rem;
   -webkit-box-shadow: var(--box-shadow-main);
   box-shadow: var(--box-shadow-main);
+  @media (max-width: 500px) {
+    max-width: 70%;
+    margin: auto;
+  }
 
   @media (max-width: 1024px) {
     width: 22rem;
