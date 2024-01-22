@@ -8,6 +8,21 @@ import { Link } from "react-scroll";
 
 export default function NavigationBar({ isMobile, className }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [displayStyle, setDisplayStyle] = useState(
+    isMenuOpen ? "flex" : "none"
+  ); //used to remove the menu from the DOM when it is closed to prevent the menu from being clickable when it is closed
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      setDisplayStyle("flex");
+    }
+    const timeoutId = setTimeout(() => {
+      if (!isMenuOpen) {
+        setDisplayStyle("none");
+      }
+    }, 500); //set the display to none after the animation is finished
+    return () => clearTimeout(timeoutId);
+  }, [isMenuOpen]);
 
   useEffect(() => {
     function handleMenuAutomaticClose() {
@@ -22,7 +37,7 @@ export default function NavigationBar({ isMobile, className }) {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
-    } else {
+    } else if (!isMenuOpen) {
       document.body.style.overflow = "unset";
     }
   }, [isMenuOpen]);
@@ -39,7 +54,7 @@ export default function NavigationBar({ isMobile, className }) {
               toggle={setMenuOpen}
             />
           </StyledMobileMenuIconWrapper>
-          <StyledMobileUl $ismenuopen={isMenuOpen ? isMenuOpen : undefined}>
+          <StyledMobileUl $ismenuopen={isMenuOpen} $displaystyle={displayStyle}>
             <StyledLink
               to="aboutme"
               spy={true}
@@ -120,10 +135,16 @@ const FadeInAnimation = keyframes`
   0% {
     transform: translate3d(-100px, 0, 0);
     opacity: 0;
+  
+  }
+  1% {
+
   }
   100% {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+
+
   }
 `;
 
@@ -131,10 +152,15 @@ const FadeOutAnimation = keyframes`
   0% {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+  
+  }
+  99% {
+
   }
   100% {
     transform: translate3d(-100px, 0, 0);
     opacity: 0;
+
   }
 `;
 
@@ -181,7 +207,6 @@ const StyledDesktopUl = styled.ul`
 
 const StyledMobileUl = styled.ul`
   list-style: none;
-  display: flex;
   flex-direction: column;
   position: absolute;
   padding: 12rem 4rem 12rem 4rem;
@@ -202,6 +227,7 @@ const StyledMobileUl = styled.ul`
         `}
 
   opacity: ${({ $ismenuopen }) => ($ismenuopen ? "1" : "0")};
+  display: ${({ $displaystyle }) => $displaystyle};
   transition: opacity 0.5s ease-in-out;
 `;
 

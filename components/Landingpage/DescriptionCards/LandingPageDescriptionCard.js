@@ -70,6 +70,7 @@ const StyledDescriptionCard = styled.article`
     min-width: 22rem;
     height: 80%;
     min-height: 30rem;
+    grid-template-rows: 0.3fr 1fr 0.6fr;
   }
   @media (max-width: 500px) {
     //for mobile devices
@@ -79,6 +80,7 @@ const StyledDescriptionCard = styled.article`
     min-height: 30rem;
     min-width: 18rem;
     margin: 35rem 0 0 0;
+    grid-template-rows: 0.4fr 1fr 0.6fr;
   }
 `;
 
