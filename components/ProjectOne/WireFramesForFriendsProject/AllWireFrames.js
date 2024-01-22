@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export default function AllWireFrames() {
   //all images for the wireframes with positions to get the row effect
@@ -82,8 +82,8 @@ const StyledImage = styled(Image)`
   box-shadow: var(--box-shadow-cards);
   z-index: ${({ position }) =>
     6 - position / 10}; // set the z-index from 6 to 1
-  rotate: -10deg;
-  scale: 0.9;
+  rotate: ${({ position }) => (position === 10 ? "0" : "-10deg")};
+  scale: ${({ position }) => (position === 10 ? "1" : "0.9")};
   transition: left 0.5s ease-in-out, rotate 0.3s ease-in-out,
     scale 0.3s ease-in-out, filter 0.3s ease-in-out;
   filter: ${({ position }) =>
@@ -105,29 +105,12 @@ const StyledWireFramesContainer = styled.section`
   margin-left: 15rem;
   cursor: pointer;
 
-  &:hover ${StyledImage} {
-    rotate: 0deg;
-    scale: 1;
-    @media (max-width: 1024px) {
-      scale: 0.6;
-      rotate: 0deg;
-    }
-  }
-
   @media (max-width: 1024px) {
     margin-left: 2rem;
     margin-top: 8rem;
-  }
-
-  &:active ${StyledImage} {
-    @media (max-width: 1024px) {
+    &:active ${StyledImage} {
       scale: 0.6;
       rotate: 0deg;
     }
-  }
-
-  @media (max-width: 1024px) {
-    margin-left: 2rem;
-    margin-top: 8rem;
   }
 `;

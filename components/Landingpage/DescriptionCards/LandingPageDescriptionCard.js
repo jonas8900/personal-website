@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import AllSkillSetIcons from "../../Icons/AllSkillSetIcons";
 import InformationParagraphForCards from "../../Paragraphs/InformationParagraphForCards";
 import HeadlinesForDescriptionCards from "../../Headlines/HeadlinesForDescriptionCards";
@@ -35,8 +35,6 @@ export default function LandingPageDescriptionCard() {
 
 //Wrapper
 const StyledDescriptionCard = styled.article`
-  grid-area: 2 / 2 / 3 / 3; // for positioning the card
-
   display: grid; // for the elements in the card
   grid-template-columns: 1fr 0.7fr;
   grid-template-rows: 0.6fr repeat(2, 1fr);
@@ -61,16 +59,28 @@ const StyledDescriptionCard = styled.article`
     align-self: center;
     margin-left: 4rem;
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1299px) {
+    //for small screens
+
+    margin: 35rem auto 0 auto; //for more distance between the photobox and the card
+  }
+  @media (max-width: 915px) {
     //for small screens
     width: 80%;
     min-width: 22rem;
     height: 80%;
     min-height: 30rem;
-    margin: auto;
-    grid-area: 2 / 1 / 3 / 3;
-    grid-template-columns: 1.5fr 0.7fr;
-    grid-template-rows: 0.6fr repeat(2, 1fr);
+    grid-template-rows: 0.3fr 1fr 0.6fr;
+  }
+  @media (max-width: 500px) {
+    //for mobile devices
+
+    width: 90%;
+    height: 80%;
+    min-height: 30rem;
+    min-width: 18rem;
+    margin: 35rem 0 0 0;
+    grid-template-rows: 0.4fr 1fr 0.6fr;
   }
 `;
 

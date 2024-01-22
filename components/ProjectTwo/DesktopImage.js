@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 import Image from "next/image";
 
 export default function DesktopImage({ className }) {
@@ -197,7 +197,8 @@ export default function DesktopImage({ className }) {
                 isolation: "auto",
                 mixBlendMode: "normal",
               }}
-            /> {/* put an image of the website project inside the desktop svg image and make it scrollable */}
+            />{" "}
+            {/* put an image of the website project inside the desktop svg image and make it scrollable */}
             <foreignObject
               x="4212.8"
               y="-1281.1"

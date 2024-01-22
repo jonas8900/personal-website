@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 export default function SortAnimation({ children, className }) {
-  //animation for the sorting of the photos in the photobox
+  //animation for the sorting the photos in the photobox with framer motion
   const SortedAnimation = {
     hidden: {
       right: "30%",

@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export default function ProjectDescriptionBranch({ className }) {
+  //branch for the project description on the project page
   return <StyledProjectDescriptionBranchDiv className={className} />;
 }
 

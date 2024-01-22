@@ -1,10 +1,30 @@
-import { cubicBezier, motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export default function WebsiteHeadline() {
   const texts = ["Frontend Developer", "Web Developer", "React Developer"];
   const [currentText, setCurrentText] = useState(0);
+  const [windowWidthCheck, setWindowWidthCheck] = useState(false);
+  const [fontColor, setFontColor] = useState("black");
+
+  function isWindowWidthGreaterThan600() {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth > 600) {
+        setWindowWidthCheck(true);
+      } else {
+        setWindowWidthCheck(false);
+      }
+    }
+  }
+
+  useEffect(() => {
+    isWindowWidthGreaterThan600();
+    window.addEventListener("resize", isWindowWidthGreaterThan600);
+    return () => {
+      window.removeEventListener("resize", isWindowWidthGreaterThan600);
+    };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,8 +55,50 @@ export default function WebsiteHeadline() {
     },
   };
 
+  const controls = useAnimation();
+
+  function handleChangeBackgroundOnDrag(event, info) {
+    const desktopWidth = window.innerWidth;
+    const red = (info.point.x / desktopWidth) * 171;
+    const green = (info.point.x / desktopWidth) * 105;
+    const blue = (info.point.x / desktopWidth) * 17;
+
+    //yellow (:root color) RGBA rgba(84, 101, 141, 1)
+    //blue (:root color) RGBA rgba(255, 206, 124, 1)
+
+    const backgroundColor = `rgba(${84 + red}, ${101 + green}, ${
+      141 - blue
+    }, 1)`;
+    controls.start({ backgroundColor });
+  }
+
+  function handleDragEnd(event, info) {
+    const checkOnWhichSideOfScreen = window.innerWidth / 2;
+    if (info.point.x < checkOnWhichSideOfScreen) {
+      controls.start({ backgroundColor: `rgba(84, 101, 141, 1)` });
+      setFontColor("white");
+    } else {
+      controls.start({ backgroundColor: `rgba(255, 206, 124, 1)` });
+      setFontColor("black");
+    }
+  }
   return (
-    <StyledHeadlineWrapper>
+    <StyledHeadlineWrapper
+      drag="x"
+      dragConstraints={
+        windowWidthCheck ? { left: -400, right: 400 } : { left: -40, right: 40 }
+      }
+      dragElastic={0.2}
+      dragTransition={{
+        bounceStiffness: 600,
+        bounceDamping: 10,
+      }}
+      onDrag={handleChangeBackgroundOnDrag}
+      onDragEnd={handleDragEnd}
+      onDragStart={() =>
+        controls.start({ backgroundColor: `rgba(255, 206, 124, 1)` })
+      }
+      animate={controls}>
       <StyledHeadline
         key={texts[currentText]}
         variants={wordAnimation}
@@ -49,9 +111,10 @@ export default function WebsiteHeadline() {
         {" "}
         {texts[currentText].split("").map((char, index) => (
           <StyledHeadlineText
+            style={{ color: fontColor }}
             key={char + "-" + index}
             variants={characterAnimation}>
-            {char}
+            <code>{char}</code>
           </StyledHeadlineText>
         ))}
       </StyledHeadline>
@@ -59,25 +122,27 @@ export default function WebsiteHeadline() {
   );
 }
 
-const StyledHeadlineWrapper = styled.div`
+const StyledHeadlineWrapper = styled(motion.div)`
   align-self: center;
   justify-self: center;
-
-  
-  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  cursor: grab;
+  margin: 4rem auto 10rem auto;
+  background-color: var(--secondary-yellow);
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 17rem;
+  height: 6rem;
 `;
 
 const StyledHeadline = styled(motion.h1)`
-  margin-top: 15rem;
-  margin-bottom: 5rem;
-  border-radius: 20px;
-
   color: black;
-  text-shadow: 0.5px 0.5px 1px var(--primary-blue);
   padding: 1rem 2rem 1rem 2rem;
 `;
 
 const StyledHeadlineText = styled(motion.span)`
   text-align: center;
-  color: var(--primary-blue);
 `;

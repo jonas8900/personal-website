@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export default function StatBox({
   name,
@@ -66,7 +66,7 @@ const StyledUl = styled(motion.ul)`
   border-radius: 9px;
   box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1299px) {
     width: 15rem;
     height: 10rem;
   }
@@ -76,7 +76,7 @@ const StyledLi = styled(motion.li)`
   list-style-type: none;
   padding: 0.7rem;
   color: var(--primary-blue);
-  @media (max-width: 1024px) {
+  @media (max-width: 1299px) {
     font-size: 12px;
     padding: 0.4rem;
   }
