@@ -12,7 +12,7 @@ export default function Page({ isMobile }) {
   return (
     <StyledMain>
       <StyledLandingPageWrapper>
-        <NavigationBar isMobile={isMobile} />
+        <StyledNavigationBar isMobile={isMobile} />
         <WebsiteHeadline />
         <StyledPhotoAndDescriptionCardWrapper id="aboutme">
           <PhotoBox />
@@ -53,6 +53,10 @@ const StyledProjectPageWrapper = styled.section`
   height: 100%;
 `;
 
+const StyledNavigationBar = styled(NavigationBar)`
+  z-index: 2;
+`;
+
 //third page
 const StyledContactPage = styled(ContactPage)``;
 
@@ -60,6 +64,7 @@ const StyledContactPage = styled(ContactPage)``;
 const StyledPhotoAndDescriptionCardWrapper = styled.section`
   display: flex;
   margin-bottom: 20rem;
+  z-index: 1;
   @media (max-width: 1299px) {
     flex-direction: column;
   }

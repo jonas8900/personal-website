@@ -6,7 +6,7 @@ import Hamburger from "hamburger-react";
 import JdLogo from "@/components/Icons/JDLogo";
 import { Link } from "react-scroll";
 
-export default function NavigationBar({ isMobile }) {
+export default function NavigationBar({ isMobile, className }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -19,8 +19,16 @@ export default function NavigationBar({ isMobile }) {
     handleMenuAutomaticClose();
   }, [isMobile]);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMenuOpen]);
+
   return (
-    <StyledNavigationWrapper>
+    <StyledNavigationWrapper className={className}>
       {isMobile ? (
         <>
           <StyledMobileMenuIconWrapper>
@@ -151,20 +159,19 @@ const StyledDesktopUl = styled.ul`
 
 const StyledMobileUl = styled.ul`
   list-style: none;
-  display: ${({ $ismenuopen }) => ($ismenuopen ? "flex" : "none")};
+  display: flex;
   flex-direction: column;
   position: absolute;
-  width: 40%;
-  margin: auto;
-  height: 20rem;
-  top: 2rem;
-  border-radius: 9px;
-  padding: 0;
+  padding: 12rem 4rem 12rem 4rem;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  top: 0%;
   color: white;
-
-  background-color: var(--description-card-color);
-  opacity: ${({ $ismenuopen }) => ($ismenuopen ? 1 : 0)};
-  transition: opacity 0.3s ease-in-out;
+  background-color: rgba(22, 26, 26, 1);
+  left: ${({ $ismenuopen }) => ($ismenuopen ? "0%" : "100%")};
+  visibility: ${({ $ismenuopen }) => ($ismenuopen ? "visible" : "hidden")};
+  transition: left 0.3s ease-in-out, visibility 1s ease-in-out;
 `;
 
 // used as a wrapper for the list items, Link is used to scroll to the specific section
