@@ -169,9 +169,9 @@ const StyledMobileUl = styled.ul`
   top: 0%;
   color: white;
   background-color: rgba(22, 26, 26, 1);
-  left: ${({ $ismenuopen }) => ($ismenuopen ? "0%" : "100%")};
-  visibility: ${({ $ismenuopen }) => ($ismenuopen ? "visible" : "hidden")};
-  transition: left 0.3s ease-in-out, visibility 1s ease-in-out;
+  transform: translateX(${({ $ismenuopen }) => ($ismenuopen ? "0%" : "100%")});
+  opacity: ${({ $ismenuopen }) => ($ismenuopen ? 1 : 0)};
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 `;
 
 // used as a wrapper for the list items, Link is used to scroll to the specific section
