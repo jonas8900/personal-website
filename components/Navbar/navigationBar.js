@@ -1,6 +1,6 @@
 import { faEnvelope, faSquarePhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { styled } from "styled-components";
+import { keyframes, styled, css } from "styled-components";
 import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
 import JdLogo from "@/components/Icons/JDLogo";
@@ -116,6 +116,28 @@ export default function NavigationBar({ isMobile, className }) {
   );
 }
 
+const FadeInAnimation = keyframes`
+  0% {
+    transform: translate3d(-100px, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+`;
+
+const FadeOutAnimation = keyframes`
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-100px, 0, 0);
+    opacity: 0;
+  }
+`;
+
 //navigationwrapper
 
 const StyledNavigationWrapper = styled.nav`
@@ -169,9 +191,17 @@ const StyledMobileUl = styled.ul`
   top: 0%;
   color: white;
   background-color: rgba(22, 26, 26, 1);
-  transform: translateX(${({ $ismenuopen }) => ($ismenuopen ? "0%" : "100%")});
-  opacity: ${({ $ismenuopen }) => ($ismenuopen ? 1 : 0)};
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  ${({ $ismenuopen }) =>
+    $ismenuopen
+      ? css`
+          animation: ${FadeInAnimation} 0.5s ease-in-out;
+        `
+      : css`
+          animation: ${FadeOutAnimation} 0.5s ease-in-out;
+        `}
+
+  opacity: ${({ $ismenuopen }) => ($ismenuopen ? "1" : "0")};
+  transition: opacity 0.5s ease-in-out;
 `;
 
 // used as a wrapper for the list items, Link is used to scroll to the specific section
