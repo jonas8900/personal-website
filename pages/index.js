@@ -55,6 +55,7 @@ const StyledProjectPageWrapper = styled.section`
 
 const StyledNavigationBar = styled(NavigationBar)`
   z-index: 2;
+  height: 100%;
 `;
 
 //third page

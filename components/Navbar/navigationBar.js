@@ -189,6 +189,7 @@ const StyledMobileUl = styled.ul`
   width: 100%;
   height: 100%;
   top: 0%;
+  bottom: 0%;
   color: white;
   background-color: rgba(22, 26, 26, 1);
   ${({ $ismenuopen }) =>
