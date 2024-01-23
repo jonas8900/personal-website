@@ -5,6 +5,18 @@ import { SWRConfig } from "swr";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 export default function App({ Component, pageProps }) {
   const [isMobile, setMobile] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+		const handleScroll = () => {
+			setScrollY(window.scrollY);
+		};
+		handleScroll();
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
 
   // useEffect with innerWidth to detect mobile device for responsive design
   useEffect(() => {
@@ -20,7 +32,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <SWRConfig value={{ fetcher }}>
-        <Component {...pageProps} isMobile={isMobile} />
+        <Component {...pageProps} isMobile={isMobile} scrollY={scrollY}/>
       </SWRConfig>
     </>
   );

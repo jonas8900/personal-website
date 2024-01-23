@@ -18,7 +18,7 @@ export default function ContactPage({ className }) {
       setNotARobotConfirmed(true);
       setTimeout(() => {
         setNotARobotConfirmed(false);
-      }, 9000);
+      }, 9000); // after 9 seconds the animation with changing the background and the context will be removed
       return;
     }
 
@@ -111,7 +111,7 @@ export default function ContactPage({ className }) {
           />
         </StyledTextAreaWrapper>
         <StyledRecaptchaWrapper>
-          <ReCAPTCHA
+          <ReCAPTCHA //to prevent spam from bots and other malicious users
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
             onChange={(value) => setCapture(value)}
           />
