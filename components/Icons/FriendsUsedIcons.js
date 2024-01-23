@@ -7,8 +7,7 @@ import JavascriptIcon from "./SkillSetIcons/JavascriptIcon";
 import MongoDBIcon from "./SkillSetIcons/MongoDBIcon";
 import NextJSIcon from "./SkillSetIcons/NextJSIcon";
 import ReactIcon from "./SkillSetIcons/ReactIcon";
-
-
+import ScrollAnimation from "../Animations/ScrollAnimation";
 
 //put all icons in one component to be able to import them all at once
 export default function FriendsSkillSetIcons() {
