@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import AllSkillSetIcons from "../../Icons/AllSkillSetIcons";
 import InformationParagraphForCards from "../../Paragraphs/InformationParagraphForCards";
 import HeadlinesForDescriptionCards from "../../Headlines/HeadlinesForDescriptionCards";
+import ScrollAnimation from "@/components/Animations/ScrollAnimation";
 
 export default function LandingPageDescriptionCard() {
   return (
@@ -19,13 +20,16 @@ export default function LandingPageDescriptionCard() {
       <StyledHeadline>Hi! Ich bin Jonas</StyledHeadline>
 
       <StyledParagraph>
-        ein leidenschaftlicher Frontend-Entwickler mit einem breiten Skillset
-        und einer vielseitigen beruflichen Geschichte. Meine Entwicklung hin zum
-        Coding-Enthusiasten begann nach mehrjähriger Erfahrung im kaufmännischen
-        Bereich und meiner Tätigkeit als selbstständiger Betreiber eines
-        Tonstudios. Mein anfängliches Hobby entwickelte sich schnell zu meiner
-        Berufung im Bereich Frontend-Entwicklung.
+        <ScrollAnimation>
+          ein leidenschaftlicher Frontend-Entwickler mit einem breiten Skillset
+          und einer vielseitigen beruflichen Geschichte. Meine Entwicklung hin
+          zum Coding-Enthusiasten begann nach mehrjähriger Erfahrung im
+          kaufmännischen Bereich und meiner Tätigkeit als selbstständiger
+          Betreiber eines Tonstudios. Mein anfängliches Hobby entwickelte sich
+          schnell zu meiner Berufung im Bereich Frontend-Entwicklung.{" "}
+        </ScrollAnimation>
       </StyledParagraph>
+
       <StyledIconWrapper>
         <AllSkillSetIcons />
       </StyledIconWrapper>

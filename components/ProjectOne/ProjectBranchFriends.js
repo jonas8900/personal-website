@@ -4,6 +4,7 @@ import FriendsSkillSetIcons from "../Icons/FriendsUsedIcons";
 import ProjectMiddleBranch from "../ProjectBranch/ProjectMiddleBranch";
 import ProjectDescriptionBranch from "../ProjectBranch/ProjectDescriptionBranch";
 import AllWireFrames from "./WireFramesForFriendsProject/AllWireFrames";
+import ScrollAnimation from "../Animations/ScrollAnimation";
 
 export default function ProjectBranch() {
   return (
@@ -35,10 +36,12 @@ export default function ProjectBranch() {
             Techniken:
           </>
         }
-        icons={<FriendsSkillSetIcons />}
+        icons={<FriendsSkillSetIcons></FriendsSkillSetIcons>}
         fontcolor={"var(--primary-blue)"}
       />
-      <AllWireFrames />
+      <ScrollAnimation>
+        <AllWireFrames />
+      </ScrollAnimation>
     </StyledBranchSection>
   );
 }

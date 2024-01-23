@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import InformationParagraphForCards from "../Paragraphs/InformationParagraphForCards";
 import HeadlinesForDescriptionCards from "../Headlines/HeadlinesForDescriptionCards";
+import ScrollAnimation from "../Animations/ScrollAnimation";
 
 export default function ProjectDescriptionCard({
   className,

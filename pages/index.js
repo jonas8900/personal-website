@@ -8,22 +8,32 @@ import ProjectBranchEmbs from "@/components/ProjectTwo/ProjectBranchEmbs";
 import ContactPage from "@/components/Contact/ContactPage";
 import WebsiteHeadline from "@/components/Landingpage/DragableHeadline";
 import TopScrollButton from "@/components/TopScrolling/TopScrollButton";
+import ScrollAnimation from "@/components/Animations/ScrollAnimation";
 export default function Page({ isMobile, scrollY }) {
   return (
     <StyledMain>
       <StyledLandingPageWrapper>
         <StyledNavigationBar isMobile={isMobile} />
-        <WebsiteHeadline />
-        <StyledPhotoAndDescriptionCardWrapper id="aboutme">
-          <PhotoBox />
-          <LandingPageDescriptionCard />
-        </StyledPhotoAndDescriptionCardWrapper>
+        <ScrollAnimation>
+          <WebsiteHeadline />
+        </ScrollAnimation>
+        <ScrollAnimation>
+          <StyledPhotoAndDescriptionCardWrapper id="aboutme">
+            <PhotoBox />
+            <LandingPageDescriptionCard />
+          </StyledPhotoAndDescriptionCardWrapper>
+        </ScrollAnimation>
       </StyledLandingPageWrapper>
       <StyledProjectPageWrapper id="projects">
         <ProjectBranchFriends />
-        <ProjectBranchEmbs />
+
+        <ScrollAnimation>
+          <ProjectBranchEmbs />
+        </ScrollAnimation>
       </StyledProjectPageWrapper>
-      <StyledContactPage />
+      <ScrollAnimation>
+        <StyledContactPage />
+      </ScrollAnimation>
       <TopScrollButton scrollY={scrollY} />
     </StyledMain>
   );

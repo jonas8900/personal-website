@@ -4,6 +4,8 @@ import { keyframes, styled, css } from "styled-components";
 import { useEffect, useState } from "react";
 import Hamburger from "hamburger-react";
 import JdLogo from "@/components/Icons/JDLogo";
+import PhoneIconForNavbar from "./PhoneIconForNavbar";
+import MailIconForNavbar from "./MailIconForNavbar";
 import { Link } from "react-scroll";
 
 export default function NavigationBar({ isMobile, className }) {
@@ -83,10 +85,10 @@ export default function NavigationBar({ isMobile, className }) {
               <li>Kontakt</li>
             </StyledLink>
             <StyledLiIcons>
-              <StyledIcon icon={faSquarePhone} />
+              <PhoneIconForNavbar />
             </StyledLiIcons>
             <StyledLiIcons>
-              <StyledIcon icon={faEnvelope} />
+              <MailIconForNavbar />
             </StyledLiIcons>
           </StyledMobileUl>
         </>
@@ -119,10 +121,10 @@ export default function NavigationBar({ isMobile, className }) {
               <li>Kontakt</li>
             </StyledLink>
             <StyledLiIcons>
-              <StyledIcon icon={faSquarePhone} />
+              <PhoneIconForNavbar />
             </StyledLiIcons>
             <StyledLiIcons>
-              <StyledIcon icon={faEnvelope} />
+              <MailIconForNavbar />
             </StyledLiIcons>
           </StyledDesktopUl>
         </>
@@ -277,22 +279,6 @@ const StyledLiIcons = styled.li`
     border-radius: 45px;
     min-width: 2rem;
     width: 10%;
-  }
-`;
-
-const StyledIcon = styled(FontAwesomeIcon)`
-  width: 1.5rem;
-  height: 2rem;
-  color: var(--secondary-yellow);
-  transition: all 0.3s ease-in-out;
-  &:active {
-    color: var(--primary-blue);
-  }
-  @media (min-width: 915px) {
-    //for desktop devices
-    &:hover {
-      color: var(--primary-blue);
-    }
   }
 `;
 

@@ -1,17 +1,16 @@
-import styled from "styled-components"
+import styled from "styled-components";
+import ScrollAnimation from "../Animations/ScrollAnimation";
 
-export default function InformationParagraphForCards({children, className}) {
-
+export default function InformationParagraphForCards({ children, className }) {
   //paragraph for the description cards on the project page
-    return(
-        <StyledParagraph className={className}>
-            {children}
-        </StyledParagraph>
-    )
-
+  return (
+    <StyledParagraph className={className}>
+      <ScrollAnimation>{children}</ScrollAnimation>
+    </StyledParagraph>
+  );
 }
 
-const StyledParagraph = styled.p`
+const StyledParagraph = styled.div`
   font-weight: 400;
   font-size: var(--font-size-greater-text);
   margin: 2rem 4rem auto 4.5rem;
