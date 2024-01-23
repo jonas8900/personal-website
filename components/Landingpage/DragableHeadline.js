@@ -10,7 +10,7 @@ export default function WebsiteHeadline() {
 
   function isWindowWidthGreaterThan600() {
     if (typeof window !== "undefined") {
-      if (window.innerWidth > 600) {
+      if (window.innerWidth > 1200) {
         setWindowWidthCheck(true);
       } else {
         setWindowWidthCheck(false);
@@ -84,9 +84,13 @@ export default function WebsiteHeadline() {
   }
   return (
     <StyledHeadlineWrapper
-      drag="x"
+      drag={
+        windowWidthCheck
+          ? "x"
+          : false /*only allow drag on x axis if window width is greater than 1200px*/
+      }
       dragConstraints={
-        windowWidthCheck ? { left: -400, right: 400 } : { left: -40, right: 40 }
+        windowWidthCheck ? { left: -400, right: 400 } : { left: -10, right: 10 }
       }
       dragElastic={0.2}
       dragTransition={{

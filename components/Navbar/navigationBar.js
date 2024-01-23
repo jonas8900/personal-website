@@ -43,7 +43,7 @@ export default function NavigationBar({ isMobile, className }) {
   }, [isMenuOpen]);
 
   return (
-    <StyledNavigationWrapper className={className}>
+    <StyledNavigationWrapper className={className} id="top">
       {isMobile ? (
         <>
           <StyledMobileMenuIconWrapper>

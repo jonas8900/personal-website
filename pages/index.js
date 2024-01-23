@@ -2,13 +2,13 @@ import { styled } from "styled-components";
 import NavigationBar from "@/components/Navbar/navigationBar";
 import LandingPageDescriptionCard from "@/components/Landingpage/DescriptionCards/LandingPageDescriptionCard";
 import PhotoBox from "@/components/Landingpage/photoBoxes/photoBox";
-import AllWireFrames from "@/components/ProjectOne/WireFramesForFriendsProject/AllWireFrames";
+
 import ProjectBranchFriends from "@/components/ProjectOne/ProjectBranchFriends";
 import ProjectBranchEmbs from "@/components/ProjectTwo/ProjectBranchEmbs";
 import ContactPage from "@/components/Contact/ContactPage";
-import WebsiteHeadline from "@/components/Landingpage/Websiteheadline";
-
-export default function Page({ isMobile }) {
+import WebsiteHeadline from "@/components/Landingpage/DragableHeadline";
+import TopScrollButton from "@/components/TopScrolling/TopScrollButton";
+export default function Page({ isMobile, scrollY }) {
   return (
     <StyledMain>
       <StyledLandingPageWrapper>
@@ -24,6 +24,7 @@ export default function Page({ isMobile }) {
         <ProjectBranchEmbs />
       </StyledProjectPageWrapper>
       <StyledContactPage />
+      <TopScrollButton scrollY={scrollY} />
     </StyledMain>
   );
 }

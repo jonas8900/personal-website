@@ -4,7 +4,7 @@ export default async function handler(request, response) {
   if (request.method === "POST") {
     const data = request.body;
     console.log(data);
-
+    //to get the data from the contactform and get an email with the written data
     try {
       await transporter.sendMail({
         ...mailOptions,
