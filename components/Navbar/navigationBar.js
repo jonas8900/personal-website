@@ -83,10 +83,13 @@ export default function NavigationBar({ isMobile, className }) {
               <li>Kontakt</li>
             </StyledLink>
             <StyledLiIcons>
-              <StyledIcon icon={faSquarePhone} />
+              <StyledIcon icon={faSquarePhone} href="tel:017624318470" />
             </StyledLiIcons>
             <StyledLiIcons>
-              <StyledIcon icon={faEnvelope} />
+              <StyledIcon
+                icon={faEnvelope}
+                href="mailto:jonas.dally@hotmail.de"
+              />
             </StyledLiIcons>
           </StyledMobileUl>
         </>
