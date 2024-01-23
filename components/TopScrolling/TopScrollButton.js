@@ -23,7 +23,7 @@ export default function TopScrollButton() {
     <>
       {activateScrollButton && (
         <section>
-          <Link to="top">
+          <Link to="top" spy={true} smooth={true} offset={0} duration={500}>
             <StyledFontAwesomeIcon
               icon={faCircleChevronUp}
               $activatescrollbutton={activateScrollButton}
