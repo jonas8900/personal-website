@@ -1,25 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
+import ReCAPTCHA from "react-google-recaptcha";
+import SendingMailToastMessage from "../ToastMessages/SendingMailToastMessage";
+import SendingFailedToastMessage from "../ToastMessages/SendingFailedToastMessage";
+import NotARobotToastMessage from "../ToastMessages/NotARobotToastMessage";
 
 export default function ContactPage({ className }) {
-  function handleSubmit(event) {
+  const [capture, setCapture] = useState("");
+  const [sendingSuccessful, setSendingSuccessful] = useState(false);
+  const [sendingFailed, setSendingFailed] = useState(false);
+  const [notARobotConfirmed, setNotARobotConfirmed] = useState(false);
+
+  async function handleSubmit(event) {
     event.preventDefault();
+
+    if (!capture || capture === null || "") {
+      setNotARobotConfirmed(true);
+      setTimeout(() => {
+        setNotARobotConfirmed(false);
+      }, 9000);
+      return;
+    }
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
+
+    const response = await fetch("/api/contact", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      setSendingSuccessful(true);
+      setTimeout(() => {
+        setSendingSuccessful(false);
+      }, 9000);
+    } else {
+      setSendingFailed(true);
+      setTimeout(() => {
+        setSendingFailed(false);
+      }, 9000);
+    }
 
     event.target.reset();
   }
 
   return (
     <div className={className}>
-      {" "}
       {/* add a div with the prop className to style the ContactPage in the index.js */}
       <StyledH1 id="contact"> Kontakt</StyledH1>
+      {sendingSuccessful && <SendingMailToastMessage />}
+      {sendingFailed && <SendingFailedToastMessage />}
+      {notARobotConfirmed && <NotARobotToastMessage />}
       <Styledform onSubmit={handleSubmit}>
         <StyledNameInputWrapper>
           <Styledlabel id="name">Name*</Styledlabel>
-          <Styledinput type="text" name="name" placeholder="Max Mustermann" />
+          <Styledinput
+            type="text"
+            name="name"
+            placeholder="Max Mustermann"
+            required
+          />
         </StyledNameInputWrapper>
         <StyledMailInputWrapper>
           <Styledlabel id="email">E-Mail*</Styledlabel>
@@ -27,18 +71,20 @@ export default function ContactPage({ className }) {
             type="email"
             name="email"
             placeholder="max.mustermann@mustermannmail.de"
+            required
           />
         </StyledMailInputWrapper>
         <StyledInquiryWrapper>
           <Styledlabel>Anfrageart</Styledlabel>
           <Styledselect
-            name="anfrageart"
+            name="requestType"
             defaultValue="-- Wähle eine Option --">
             <option disabled value="-- Wähle eine Option --">
               -- Wähle eine Option --
             </option>
             <option value="anfrage">Website</option>
             <option value="feedback">Applikation</option>
+            <option value="jobrequest">Jobangebot</option>
             <option value="sonstiges">Sonstiges</option>
           </Styledselect>
         </StyledInquiryWrapper>
@@ -58,8 +104,18 @@ export default function ContactPage({ className }) {
         </StyledBudgetWrapper>
         <StyledTextAreaWrapper>
           <Styledlabel id="message">Nachricht*</Styledlabel>
-          <Styledtextarea name="message" placeholder="Deine Nachricht" />
+          <Styledtextarea
+            name="message"
+            placeholder="Deine Nachricht"
+            required
+          />
         </StyledTextAreaWrapper>
+        <StyledRecaptchaWrapper>
+          <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            onChange={(value) => setCapture(value)}
+          />
+        </StyledRecaptchaWrapper>
         <StyledButton type="submit">Senden</StyledButton>
       </Styledform>
     </div>
@@ -83,7 +139,7 @@ const StyledH1 = styled.h1`
 const Styledform = styled.form`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 1rem;
   grid-row-gap: 0rem;
   max-width: 60rem;
@@ -137,7 +193,7 @@ const StyledTextAreaWrapper = styled.section`
 
 //single form elements
 const StyledButton = styled.button`
-  grid-area: 4 / 1 / 5 / 3;
+  grid-area: 4 / 1 / 6 / 3;
   width: 8rem;
   height: 3rem;
   margin: auto;
@@ -212,4 +268,11 @@ const Styledtextarea = styled.textarea`
   @media (max-width: 1024px) {
     width: 22rem;
   }
+`;
+
+const StyledRecaptchaWrapper = styled.div`
+  grid-area: 4 / 1 / 5 / 3;
+  justify-self: center;
+  margin: auto;
+  margin-top: 2rem;
 `;
