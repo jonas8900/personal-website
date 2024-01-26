@@ -55,6 +55,7 @@ const StyledLandingPageWrapper = styled.section`
   @media (max-width: 1299px) {
     flex-direction: column;
     height: 100%;
+    width: 100%;
     justify-content: space-between;
   }
 `;
