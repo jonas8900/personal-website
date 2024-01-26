@@ -162,7 +162,7 @@ const StyledPhotoboxWrapper = styled.section`
   justify-self: center;
   display: flex;
   position: relative;
-
+  z-index: 1;
   cursor: pointer;
   transition: margin-right 0.5s ease-in-out;
   @media (max-width: 915px) {

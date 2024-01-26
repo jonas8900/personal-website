@@ -177,6 +177,7 @@ const StyledNavigationWrapper = styled.nav`
   grid-template-rows: 0.1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  height: 100%;
   width: 100%;
   z-index: 3;
   background-color: rgba(255, 255, 255, 0.5);
@@ -219,6 +220,7 @@ const StyledMobileUl = styled.ul`
   bottom: 0%;
   color: white;
   background-color: rgba(22, 26, 26, 1);
+  z-index: 4;
   ${({ $ismenuopen }) =>
     $ismenuopen
       ? css`
