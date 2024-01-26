@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import InformationParagraphForCards from "../Paragraphs/InformationParagraphForCards";
 import HeadlinesForDescriptionCards from "../Headlines/HeadlinesForDescriptionCards";
-import ScrollAnimation from "../Animations/ScrollAnimation";
+import Link from "next/link";
 
 export default function ProjectDescriptionCard({
   className,
@@ -9,12 +9,15 @@ export default function ProjectDescriptionCard({
   infotext,
   icons,
   fontcolor,
+  href,
 }) {
   //description card for the project page
   return (
     <StyledProjectDesriptionCard className={className}>
-      <StyledHeadline fontcolor={fontcolor}>{headline}</StyledHeadline>
-      <StyledInformation fontcolor={fontcolor}>{infotext}</StyledInformation>
+      <StyledHeadlineLink $fontcolor={fontcolor} href={href} target="_blank">
+        {headline}
+      </StyledHeadlineLink>
+      <StyledInformation $fontcolor={fontcolor}>{infotext}</StyledInformation>
       <StyledIcons>{icons}</StyledIcons>
     </StyledProjectDesriptionCard>
   );
@@ -60,14 +63,42 @@ const StyledHeadline = styled(HeadlinesForDescriptionCards)`
   width: 30%;
   margin-bottom: 2rem;
   text-align: center;
-  color: ${({ fontcolor }) => fontcolor};
+  color: ${({ $fontcolor }) => $fontcolor};
   @media (max-width: 600px) {
     width: 50%;
   }
 `;
 
+const StyledHeadlineLink = styled(Link)`
+  border: none;
+  text-decoration: none;
+  border-bottom: 2px solid #dfa100;
+  width: 30%;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: ${({ $fontcolor }) => $fontcolor};
+  font-weight: 500;
+  font-size: var(--font-size-headline);
+  margin: 2rem auto auto 4rem;
+  padding: 0.5rem;
+  border-bottom: 2px solid #dfa100;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  background-color: transparent;
+  @media (max-width: 600px) {
+    width: 50%;
+  }
+  &:hover {
+    cursor: pointer;
+    border-radius: 2rem;
+    background-color: #dfa100;
+    color: white;
+  }
+`;
+
 const StyledInformation = styled(InformationParagraphForCards)`
-  color: ${({ fontcolor }) => fontcolor};
+  color: ${({ $fontcolor }) => $fontcolor};
   margin: 0rem 2rem auto 2rem;
 `;
 

@@ -15,6 +15,7 @@ export default function ProjectBranch() {
       <StyledProjectDescriptionBranchDiv></StyledProjectDescriptionBranchDiv>
       <ProjectDescriptionCard
         headline={"Friends"}
+        href={"https://github.com/jonas8900/Capstone-project"}
         infotext={
           <>
             In meiner App namens <code>Friends</code> dreht sich alles um die
@@ -54,9 +55,9 @@ const StyledBranchSection = styled.section`
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0) 100%
+      rgba(0, 0, 0, 0) 40%
     ),
-    #7393b2;
+    rgba(115, 147, 178, 0.6);
 `;
 
 const StyledProjectHeadline = styled.h1`

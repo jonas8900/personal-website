@@ -12,6 +12,7 @@ export default function ProjectBranchEmbs() {
       <StyledProjectDescriptionBranchDiv></StyledProjectDescriptionBranchDiv>
       <StyledProjectDescriptionCard
         headline={"Firmenwebsite"}
+        href={"https://github.com/jonas8900/CompanyWebsite"}
         infotext={
           <>
             In meinem Projekt für die

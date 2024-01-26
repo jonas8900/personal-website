@@ -41,7 +41,9 @@ export default function Page({ isMobile, scrollY }) {
 
 const StyledMain = styled.main`
   width: 100%;
-  background-color: #f6f7fb;
+  background-image: url("/images/Background-figma-7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
 `;
 
