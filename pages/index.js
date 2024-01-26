@@ -9,42 +9,71 @@ import ContactPage from "@/components/Contact/ContactPage";
 import WebsiteHeadline from "@/components/Landingpage/DragableHeadline";
 import TopScrollButton from "@/components/TopScrolling/TopScrollButton";
 import ScrollAnimation from "@/components/Animations/ScrollAnimation";
+import { lazy, useState } from "react";
+import LoadingAnimation from "@/components/Animations/LoadingAnimation";
+import Image from "next/image";
 export default function Page({ isMobile, scrollY }) {
-  return (
-    <StyledMain>
-      <StyledLandingPageWrapper>
-        <StyledNavigationBar isMobile={isMobile} />
-        <ScrollAnimation>
-          <WebsiteHeadline />
-        </ScrollAnimation>
-        <ScrollAnimation>
-          <StyledPhotoAndDescriptionCardWrapper id="aboutme">
-            <PhotoBox />
-            <LandingPageDescriptionCard />
-          </StyledPhotoAndDescriptionCardWrapper>
-        </ScrollAnimation>
-      </StyledLandingPageWrapper>
-      <StyledProjectPageWrapper id="projects">
-        <ProjectBranchFriends />
+  const [loading, setLoading] = useState(true);
 
-        <ScrollAnimation>
-          <ProjectBranchEmbs />
-        </ScrollAnimation>
-      </StyledProjectPageWrapper>
-      <ScrollAnimation>
-        <StyledContactPage />
-      </ScrollAnimation>
-      <TopScrollButton scrollY={scrollY} />
-    </StyledMain>
+  setTimeout(() => {
+    setLoading(false);
+  }, 5000);
+
+  return (
+    <>
+      {loading ? (
+        <StyledLoadingSection>
+          <LoadingAnimation />
+        </StyledLoadingSection>
+      ) : (
+        <StyledMain loading={loading}>
+          <StyledLandingPageWrapper>
+            <StyledNavigationBar isMobile={isMobile} />
+            <ScrollAnimation>
+              <WebsiteHeadline />
+            </ScrollAnimation>
+            <ScrollAnimation>
+              <StyledPhotoAndDescriptionCardWrapper id="aboutme">
+                <PhotoBox />
+                <LandingPageDescriptionCard />
+              </StyledPhotoAndDescriptionCardWrapper>
+            </ScrollAnimation>
+          </StyledLandingPageWrapper>
+          <StyledProjectPageWrapper id="projects">
+            <ProjectBranchFriends />
+
+            <ScrollAnimation>
+              <ProjectBranchEmbs />
+            </ScrollAnimation>
+          </StyledProjectPageWrapper>
+          <ScrollAnimation>
+            <StyledContactPage />
+          </ScrollAnimation>
+          <TopScrollButton scrollY={scrollY} />
+        </StyledMain>
+      )}
+    </>
   );
 }
 
 const StyledMain = styled.main`
   width: 100%;
   background-image: url("/images/Background-figma-7.jpg");
+
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  opacity: ${({ loading }) => (loading ? 0 : 1)};
+  transition: opacity 0.5s ease-in-out;
+`;
+
+const StyledLoadingSection = styled.section`
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 //first page
