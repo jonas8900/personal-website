@@ -9,7 +9,7 @@ const defaultPhotoData = [
     id: 1,
     name: "Jonas Dally",
     age: "1996-08-13",
-    hobbys: "musik produzieren, programmieren, austauschen",
+    hobbys: "Musik produzieren, Programmieren, Austauschen",
     features: "Freundlich, Zielstrebig, Engagiert",
     src: "/images/Personal-Picture-Photobox.jpg",
     alt: "Personal picture",
@@ -24,8 +24,8 @@ const defaultPhotoData = [
     id: 2,
     name: "Balu",
     age: "2021-12-23",
-    hobbys: "schlafen, essen, spielen, geister jagen",
-    features: "Kuschelig, Spirituell, ängstlich",
+    hobbys: "Schlafen, Essen, Spielen, Geister jagen",
+    features: "Kuschelig, Spirituell, Ängstlich",
     src: "/images/Balu-Picture-Photobox.png",
     alt: "picture of my Cat Balu",
     rightDefault: 50,
@@ -39,7 +39,7 @@ const defaultPhotoData = [
     id: 3,
     name: "Mali",
     age: "2021-12-23",
-    hobbys: "kuscheln, auf sich aufmerksam machen, schlafen",
+    hobbys: "Kuscheln, Miauen, Schlafen",
     features: "Freundlich, Neugierig, Verspielt",
     src: "/images/Mali-Picture-Photobox.png",
     alt: "picture of my Cat Mali",
@@ -103,6 +103,8 @@ export default function PhotoBox() {
               top={photo.top}
               rotate={photo.rotate}
               index={photo.index}
+              priority
+              unoptimized={true}
             />
             <StyledParentForStatbox>
               <StyledStatBox
