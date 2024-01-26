@@ -103,6 +103,8 @@ export default function PhotoBox() {
               top={photo.top}
               rotate={photo.rotate}
               index={photo.index}
+              priority
+              unoptimized={true}
             />
             <StyledParentForStatbox>
               <StyledStatBox

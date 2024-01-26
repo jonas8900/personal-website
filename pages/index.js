@@ -12,6 +12,7 @@ import ScrollAnimation from "@/components/Animations/ScrollAnimation";
 import { lazy, useState } from "react";
 import LoadingAnimation from "@/components/Animations/LoadingAnimation";
 import Image from "next/image";
+import Head from "next/head";
 export default function Page({ isMobile, scrollY }) {
   const [loading, setLoading] = useState(true);
 

@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 export default function LoadingAnimation() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const texts = ["Loading the Homepage...", "Waiting for a safe connection..."];
+  const texts = [
+    "Lade die Website...",
+    "Stelle eine sichere Verbindung her...",
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,6 +72,10 @@ const HeadlineText = styled(motion.h1)`
   color: var(--secondary-yellow);
   text-transform: uppercase;
   text-align: center;
+
+  @media (max-width: 1299px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledLoadingSection = styled.section`
