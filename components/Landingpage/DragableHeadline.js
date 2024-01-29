@@ -57,6 +57,7 @@ export default function WebsiteHeadline() {
 
   const controls = useAnimation();
 
+// function to change the backgroundcolor of the headline while dragging to the left and right
   function handleChangeBackgroundOnDrag(event, info) {
     const desktopWidth = window.innerWidth;
     const red = (info.point.x / desktopWidth) * 171;

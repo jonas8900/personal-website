@@ -3,9 +3,9 @@ import { useEffect, useRef } from "react";
 import styled from "styled-components";
 
 export default function ScrollAnimation({ children }) {
+  //animation for the scroll effect of each element on the website
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
-
   const mainControls = useAnimation();
 
   useEffect(() => {

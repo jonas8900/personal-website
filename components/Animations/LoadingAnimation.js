@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 export default function LoadingAnimation() {
+  // Loading animation at the first opening of the website to load the images in the background
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const texts = [
-    "Lade die Website...",
-    "Stelle eine sichere Verbindung her...",
-  ];
+  const texts = ["Lade die Website...", "Bereite den Kontent vor..."];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -39,7 +37,6 @@ const LoaderSpinner = styled.div`
   border-top: 4px solid var(--secondary-yellow);
   border-radius: 50%;
   animation: spin 1s linear infinite;
-
   @keyframes spin {
     0% {
       transform: rotate(0deg);
