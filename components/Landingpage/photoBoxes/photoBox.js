@@ -9,7 +9,7 @@ const defaultPhotoData = [
     id: 1,
     name: "Jonas Dally",
     age: "1996-08-13",
-    hobbys: "Musik produzieren, Programmieren, Austauschen",
+    hobbys: "Musik produzieren, Programmieren, Kochen",
     features: "Freundlich, Zielstrebig, Engagiert",
     src: "/images/Personal-Picture-Photobox.jpg",
     alt: "Personal picture",
@@ -64,7 +64,6 @@ export default function PhotoBox() {
     setIsHoveringOverPhotobox(false);
   }
   //for the pictures and picture animations
-
   const [photoList, setPhotoList] = useState(defaultPhotoData);
 
   //function to change the position of the photos in the photobox with 3 different positions
